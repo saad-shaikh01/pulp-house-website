@@ -1,5 +1,5 @@
 "use client"
-import { cn, fontSizes } from "@/lib/utils";
+import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
@@ -85,7 +85,7 @@ export const CardTitle = ({
   children: React.ReactNode;
 }) => {
   return (
-    <h2 className={cn(" dark:text-zinc-100   font-bold tracking-wide ", fontSizes.text_3_xl, className)}>
+    <h2 className={cn(" dark:text-zinc-100   font-bold tracking-wide text-3xl", className)}>
       {children}
     </h2>
   );
@@ -100,9 +100,8 @@ export const CardDescription = ({
   return (
     <p
       className={cn(
-        "mt-2 text-gray-800 dark:text-zinc-400 tracking-wide leading-relaxed ",
+        "mt-2 text-gray-800 dark:text-zinc-400 tracking-wide leading-relaxed text-base",
         className,
-        fontSizes.base
       )}
     >
       {children}

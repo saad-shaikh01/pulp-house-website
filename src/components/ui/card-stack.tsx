@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { cn, fontSizes } from "@/lib/utils";
+import { cn } from "@/lib/utils";
 
 let interval: any;
 
@@ -57,7 +57,7 @@ export const CardStackUi = ({
             }}
           >
             <div className="text-center">
-              <p className={cn("text-neutral-900 font-semibold uppercase dark:text-white" , fontSizes.text_2_xl)} >
+              <p className={cn("text-neutral-900 font-semibold uppercase dark:text-white" , "text-2xl")} >
                 {card.name}
               </p>
               <p className="text-neutral-700 font-normal dark:text-neutral-200">
