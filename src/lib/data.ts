@@ -14,7 +14,7 @@ export const SITE_CONFIG = {
   email: "info@thepulphousepublishing.com",
   address: "5900 Balcones Drive STE 26981 Austin, TX 78731",
   socials: {
-    facebook: "#",
+    facebook: "https://www.facebook.com/thepulphousepublishing", // Updated if known
     twitter: "#",
     instagram: "#",
     linkedin: "#",
@@ -24,21 +24,29 @@ export const SITE_CONFIG = {
 export const NAV_LINKS = [
   { href: "/", label: "Home" },
   { href: "/about-us", label: "About Us" },
+  { href: "/for-author", label: "For Author" }, // Added from old site
   {
     href: "/services",
     label: "Services",
     children: [
+        { href: "/services/art-book-publishing", label: "Art Book Publishing" },
+        { href: "/services/business-book-publishing", label: "Business Book Publishing" },
+        { href: "/services/photo-book-publishing", label: "Photo Book Publishing" },
+        { href: "/services/audio-book-publishing", label: "Audiobook Publishing" },
+        { href: "/services/poetry-publishing", label: "Poetry Publishing" },
         { href: "/services/ebook-publishing", label: "Ebook Publishing" },
+        { href: "/services/kindle-direct-publishing", label: "Kindle Direct Publishing" },
+        { href: "/services/text-book-publishing", label: "Textbook Publishing" },
+        { href: "/services/book-printing", label: "Book Printing" },
         { href: "/services/book-marketing", label: "Book Marketing" },
         { href: "/services/book-cover-design", label: "Book Cover Design" },
+        { href: "/services/book-layout-design", label: "Book Layout and Design" },
         { href: "/services/book-illustration", label: "Book Illustration" },
         { href: "/services/editing-proofreading", label: "Editing And Proofreading" },
+        { href: "/services/childrens-book-publishing", label: "Children's Book Publishing" },
         { href: "/services/book-formatting-service", label: "Book Formatting Service" },
-        { href: "/services/audio-book-publishing", label: "Audiobook Publishing" },
-        { href: "/services/kindle-direct-publishing", label: "Kindle Direct Publishing" },
-        { href: "/services/book-printing", label: "Book Printing" },
-        { href: "/services/book-layout-design", label: "Book Layout and Design" },
         { href: "/services/author-branding", label: "Author Branding" },
+        { href: "/services/fiction-book-publishers", label: "Fiction Book Publishers" },
     ]
   },
   { href: "/reviews", label: "Reviews" },
@@ -49,9 +57,11 @@ export const NAV_LINKS = [
     children: [
         { href: "/packages/book-publishing-packages", label: "Book Publishing Packages" },
         { href: "/packages/ghostwriting-packages", label: "Ghostwriting Packages" },
+        { href: "/packages/holiday-packages", label: "Holiday Packages" },
     ]
   },
-  { href: "/portfolio", label: "Book Store" },
+  { href: "/bookstore", label: "Book Store" },
+  { href: "/book-reviews", label: "Book Reviews" },
 ];
 
 export const SERVICES: Service[] = [
@@ -127,6 +137,48 @@ export const SERVICES: Service[] = [
     description: "Our ghostwriters help write your ideas exactly the way you’ve imagined, making them into a compelling manuscript.",
     icon: "PenTool",
   },
+  {
+    slug: "art-book-publishing",
+    title: "Art Book Publishing",
+    description: "From Studio to Global Success. Match your creative spark with our professional know-how.",
+    icon: "Palette",
+  },
+  {
+    slug: "business-book-publishing",
+    title: "Business Book Publishing",
+    description: "Establish authority in your industry with a professionally published business book.",
+    icon: "Globe",
+  },
+  {
+    slug: "photo-book-publishing",
+    title: "Photo Book Publishing",
+    description: "Showcase your photography with high-quality, vibrant photo book printing and publishing.",
+    icon: "Image",
+  },
+  {
+    slug: "poetry-publishing",
+    title: "Poetry Publishing",
+    description: "Share your verses with the world through our dedicated poetry publishing services.",
+    icon: "PenTool",
+  },
+  {
+    slug: "text-book-publishing",
+    title: "Textbook Publishing",
+    description: "Comprehensive solutions for educational publishing, from academic texts to training manuals.",
+    icon: "GraduationCap",
+  },
+  {
+    slug: "childrens-book-publishing",
+    title: "Children's Book Publishing",
+    description: "Bring your stories to life with vibrant illustrations and child-friendly formatting.",
+    icon: "BookOpen",
+  },
+  {
+    slug: "fiction-book-publishers",
+    title: "Fiction Book Publishing",
+    description: "From fantasy to thriller, we help fiction authors refine and publish their novels.",
+    icon: "Book",
+  },
 ];
 
 export const TESTIMONIALS = [
@@ -144,5 +196,15 @@ export const TESTIMONIALS = [
         name: "Maya L.",
         role: "Children’s Book Author, “The Little Star Who Could”",
         content: "They paired me with an illustrator who brought my characters to life. Every page looked magical. They also handled the layout, printing, and eBook version so it would reach parents and teachers easily."
+    },
+    {
+        name: "David R.",
+        role: "Business Author, “Lead Like You Mean It”",
+        content: "The editorial team helped me turn my scattered notes into a structured, engaging business book. The design looked clean and professional, absolutely perfect for my audience."
+    },
+    {
+        name: "Sofia T.",
+        role: "Poet, “Echoes Between Lines”",
+        content: "I thought self-publishing poetry would be too niche or complicated, but they completely changed my mind. The final book felt personal and beautiful, like a piece of me in print."
     }
 ]
