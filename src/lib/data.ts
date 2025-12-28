@@ -5,6 +5,7 @@ export type Service = {
   title: string;
   description: string;
   icon: string;
+  content: string; // Added content field
 };
 
 export const SITE_CONFIG = {
@@ -60,72 +61,84 @@ export const SERVICES: Service[] = [
     title: "Ebook Publishing",
     description: "We help independent authors publish professionally without the hassle of pursuing a literary agent or enduring years of waiting.",
     icon: "BookOpen",
+    content: "We provide comprehensive ebook publishing services...", // Placeholder
   },
   {
     slug: "book-marketing",
     title: "Book Marketing",
     description: "Our book marketing specialists create targeted campaigns to connect your book with the readers who will love it the most.",
     icon: "Rocket",
+    content: "Our marketing strategies include...",
   },
   {
     slug: "book-cover-design",
     title: "Book Cover Design",
     description: "We provide elaborate book cover design and layout services that reflect your story and stand out on every bookshelf.",
     icon: "Palette",
+    content: "A great cover is essential...",
   },
   {
     slug: "book-illustration",
     title: "Book Illustration",
     description: "Our design team specializes in creative illustrations that make your story visually irresistible.",
     icon: "Image",
+    content: "Bring your story to life with...",
   },
   {
     slug: "editing-proofreading",
     title: "Editing & Proofreading",
     description: "We enhance your draft with expert editing, turning rough pages into a polished, professional book.",
     icon: "Edit",
+    content: "Professional editing is key...",
   },
   {
     slug: "book-formatting-service",
     title: "Book Formatting",
     description: "Our layout and formatting experts provide your book with a clean, bookstore-quality finish both inside and out.",
     icon: "FileText",
+    content: "Formatting ensures a great reading experience...",
   },
   {
     slug: "audio-book-publishing",
     title: "Audiobook Publishing",
     description: "We handle audiobook production, uploading, and distribution to reach listeners worldwide.",
     icon: "Mic",
+    content: "Reach a wider audience with audiobooks...",
   },
   {
     slug: "kindle-direct-publishing",
     title: "Kindle Direct Publishing",
     description: "We set up and upload your book across Amazon KDP correctly the first time to maximize your reach.",
     icon: "Book",
+    content: "Master the world of KDP...",
   },
   {
     slug: "book-printing",
     title: "Book Printing",
     description: "We manage the entire printing process for high-quality physical copies of your book.",
     icon: "Book",
+    content: "High-quality print on demand...",
   },
   {
     slug: "book-layout-design",
     title: "Book Layout & Design",
     description: "Elegant page layouts that ensure your book is as beautiful to read as it is to look at.",
     icon: "Layout",
+    content: "Interior design matters...",
   },
   {
     slug: "author-branding",
     title: "Author Branding",
     description: "We help craft your professional author brand, from logo and website to media kit, to build lasting visibility.",
     icon: "User",
+    content: "Build your brand as an author...",
   },
   {
     slug: "ghostwriting-services",
     title: "Ghostwriting",
     description: "Our ghostwriters help write your ideas exactly the way you’ve imagined, making them into a compelling manuscript.",
     icon: "PenTool",
+    content: "Let us write your story...",
   },
 ];
 
