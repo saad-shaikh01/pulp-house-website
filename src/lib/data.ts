@@ -24,21 +24,29 @@ export const SITE_CONFIG = {
 export const NAV_LINKS = [
   { href: "/", label: "Home" },
   { href: "/about-us", label: "About Us" },
+  { href: "/for-author", label: "For Author" },
   {
     href: "/services",
     label: "Services",
     children: [
-        { href: "/services/ebook-publishing", label: "Ebook Publishing" },
-        { href: "/services/book-marketing", label: "Book Marketing" },
-        { href: "/services/book-cover-design", label: "Book Cover Design" },
-        { href: "/services/book-illustration", label: "Book Illustration" },
-        { href: "/services/editing-proofreading", label: "Editing And Proofreading" },
-        { href: "/services/book-formatting-service", label: "Book Formatting Service" },
-        { href: "/services/audio-book-publishing", label: "Audiobook Publishing" },
-        { href: "/services/kindle-direct-publishing", label: "Kindle Direct Publishing" },
-        { href: "/services/book-printing", label: "Book Printing" },
-        { href: "/services/book-layout-design", label: "Book Layout and Design" },
-        { href: "/services/author-branding", label: "Author Branding" },
+      { href: "/services/art-book-publishing", label: "Art Book Publishing" },
+      { href: "/services/business-book-publishing", label: "Business Book Publishing" },
+      { href: "/services/photo-book-publishing", label: "Photo Book Publishing" },
+      { href: "/services/audio-book-publishing", label: "Audiobook Publishing" },
+      { href: "/services/poetry-publishing", label: "Poetry Publishing" },
+      { href: "/services/ebook-publishing", label: "Ebook Publishing" },
+      { href: "/services/kindle-direct-publishing", label: "Kindle Direct Publishing" },
+      { href: "/services/text-book-publishing", label: "Textbook Publishing" },
+      { href: "/services/book-printing", label: "Book Printing" },
+      { href: "/services/book-marketing", label: "Book Marketing" },
+      { href: "/services/book-cover-design", label: "Book Cover Design" },
+      { href: "/services/book-layout-design", label: "Book Layout and Design" },
+      { href: "/services/book-illustration", label: "Book Illustration" },
+      { href: "/services/editing-proofreading", label: "Editing And Proofreading" },
+      { href: "/services/childrens-book-publishing", label: "Children's Book Publishing" },
+      { href: "/services/book-formatting-service", label: "Book Formatting Service" },
+      { href: "/services/author-branding", label: "Author Branding" },
+      { href: "/services/fiction-book-publishers", label: "Fiction Book Publishers" },
     ]
   },
   { href: "/reviews", label: "Reviews" },
@@ -47,11 +55,13 @@ export const NAV_LINKS = [
     href: "/packages",
     label: "Packages",
     children: [
-        { href: "/packages/book-publishing-packages", label: "Book Publishing Packages" },
-        { href: "/packages/ghostwriting-packages", label: "Ghostwriting Packages" },
+      { href: "/packages/book-publishing-packages", label: "Book Publishing Packages" },
+      { href: "/packages/ghostwriting-packages", label: "Ghostwriting Packages" },
+      { href: "/packages/holiday-packages", label: "Holiday Packages" },
     ]
   },
-  { href: "/portfolio", label: "Book Store" },
+  { href: "/bookstore", label: "Book Store" },
+  { href: "/book-reviews", label: "Book Reviews" },
 ];
 
 export const SERVICES: Service[] = [

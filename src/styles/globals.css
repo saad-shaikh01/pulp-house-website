@@ -99,22 +99,36 @@
   --card-foreground: 240 10% 3.9%;
   --popover: 0 0% 100%;
   --popover-foreground: 240 10% 3.9%;
-  --primary: 135 49.8% 43.7%;
-  --primary-foreground: 0 0% 93%;
+
+  /* Brand Colors - Primary: Dark Purple (#341e36) */
+  --primary: 302 37% 16%;
+  --primary-foreground: 0 0% 98%;
+
+  /* Secondary: Bright Purple (#9e27a9) */
+  --secondary: 302 63% 40%;
+  --secondary-foreground: 0 0% 98%;
+
+  /* Primary Light (for gradients/highlights) */
   --primary-light: 262 84% 66%;
   --primary-light-foreground: 262 83% 75%;
-  --secondary: 256 100% 95%;
-  --secondary-foreground: 249 43% 26%;
+
   --muted: 240 4.8% 95.9%;
   --muted-foreground: 240 3.8% 46.1%;
-  --accent: 240 4.8% 95.9%;
-  --accent-foreground: 240 5.9% 10%;
+
+  /* Accent: Dark Blue-Gray for headings (#394B5E) */
+  --accent: 210 24% 30%;
+  --accent-foreground: 0 0% 98%;
+
   --destructive: 0 84.2% 60.2%;
   --destructive-foreground: 0 0% 98%;
   --border: 240 5.9% 90%;
   --input: 240 5.9% 90%;
-  --ring: 252 56% 57%;
+  --ring: 302 63% 40%;
   --radius: 0.75rem;
+
+  /* Custom brand colors */
+  --ticker-bg: 0 77% 42%;        /* #b91c1c - Red for promo ticker */
+  --ticker-bg-2: 262 84% 66%;    /* #7c3aed - Purple gradient */
 
   --chart-1: 12 76% 61%;
   --chart-2: 173 58% 39%;
@@ -130,21 +144,28 @@
   --card-foreground: 0 0% 98%;
   --popover: 240 10% 3.9%;
   --popover-foreground: 0 0% 98%;
-  --primary: 135 49.8% 43.7%;
-  --primary-foreground: 0 0% 93%;
+
+  /* Brand Colors - Lighter for dark mode */
+  --primary: 302 50% 30%;
+  --primary-foreground: 0 0% 98%;
+
+  --secondary: 302 63% 50%;
+  --secondary-foreground: 0 0% 98%;
+
   --primary-light: 262 84% 66%;
   --primary-light-foreground: 262 83% 75%;
-  --secondary: 256 42% 25%;
-  --secondary-foreground: 249 94% 93%;
+
   --muted: 240 3.7% 15.9%;
   --muted-foreground: 240 5% 64.9%;
-  --accent: 240 3.7% 15.9%;
+
+  --accent: 210 30% 45%;
   --accent-foreground: 0 0% 98%;
+
   --destructive: 0 84.2% 60.2%;
   --destructive-foreground: 0 0% 98%;
   --border: 240 3.7% 15.9%;
   --input: 240 3.7% 15.9%;
-  --ring: 262 83% 58%;
+  --ring: 302 63% 58%;
   --radius: 0.5rem;
 
   --chart-1: 220 70% 50%;
@@ -440,4 +461,22 @@ img {
 
 h1, h2, h3, h4, h5, h6 {
   @apply bg-gradient-to-br from-background to-background/60  dark:from-foreground dark:to-foreground/60 bg-clip-text text-transparent  !font-sans;
+}
+
+/* Promo Ticker Marquee Animation */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 25s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
 }
