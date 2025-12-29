@@ -4,7 +4,13 @@ import { FC } from "react";
 import { motion } from "framer-motion";
 import { Play, Star } from "lucide-react";
 
-const videos = [
+interface VideoTestimonialsSectionProps {
+  videos?: string[];
+  title?: string;
+  subtitle?: string;
+}
+
+const DEFAULT_VIDEOS = [
   "https://video.thepulphousepublishing.com/home-video.webm",
   "https://video.thepulphousepublishing.com/testi-01.webm",
   "https://video.thepulphousepublishing.com/testi-02.webm",
@@ -13,7 +19,11 @@ const videos = [
   "https://video.thepulphousepublishing.com/ghostwriting/8.webm",
 ];
 
-export const VideoTestimonialsSection: FC = () => {
+export const VideoTestimonialsSection: FC<VideoTestimonialsSectionProps> = ({
+  videos = DEFAULT_VIDEOS,
+  title = "Verified Reviews of Our Publishing Services",
+  subtitle = "Don't just take our word for it. Listen to the reviews from authors, just like you, across the country that experienced the quality and commitment of The Pulp House Publishing."
+}) => {
   return (
     <section className="py-24 md:py-32 bg-gradient-to-b from-primary/5 to-background relative overflow-hidden">
       <div className="container px-4">
@@ -29,10 +39,10 @@ export const VideoTestimonialsSection: FC = () => {
             Client Testimonials
           </div>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold !bg-gradient-to-br !from-foreground !to-foreground/60 !bg-clip-text !text-transparent mb-4">
-            Verified Reviews of Our Publishing Services
+            {title}
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Don't just take our word for it. Listen to the reviews from authors, just like you, across the country that experienced the quality and commitment of The Pulp House Publishing.
+            {subtitle}
           </p>
         </motion.div>
 
