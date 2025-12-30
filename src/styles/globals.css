@@ -250,6 +250,10 @@ img {
   transition-property: height;
 }
 
+.container {
+  @apply mx-auto
+}
+
 .btn-primary {
   z-index: 20;
   /* background-image: linear-gradient(to right, hsl(var(--primary)), #9333ea); */
@@ -459,8 +463,17 @@ img {
   background: linear-gradient(280deg, rgba(181,237,63,0.4) 0%, rgba(56,167,84,0.4) 48%);
 }
 
+/* Short version agar variables auto-switch hote hain */
 h1, h2, h3, h4, h5, h6 {
-  @apply bg-gradient-to-br from-background to-background/60  dark:from-foreground dark:to-foreground/60 bg-clip-text text-transparent  !font-sans;
+  @apply 
+    /* Gradient Layout */
+    bg-gradient-to-br bg-clip-text text-transparent !font-sans
+
+    /* Light Mode Colors (Force Dark Gradient) */
+    from-slate-900 to-slate-500
+    
+    /* Dark Mode Colors (Force Light Gradient) */
+    dark:from-slate-100 dark:to-slate-400; 
 }
 
 /* Promo Ticker Marquee Animation */

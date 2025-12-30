@@ -44,7 +44,7 @@ export const HeroSection: FC = () => {
   }, [isInView]);
 
   return (
-    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
+    <section className="relative  flex items-center justify-center overflow-hidden">
       {/* Video Background */}
       <div className="absolute inset-0 z-0">
         <video
@@ -56,15 +56,15 @@ export const HeroSection: FC = () => {
           poster="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=1920&q=60"
           className="absolute inset-0 w-full h-full object-cover"
         >
-          <source src="/videos/hero-video.webm" type="video/webm" />
-          <source src="/videos/hero-video.mp4" type="video/mp4" />
+          {/* <source src="/videos/hero-video.webm" type="video/webm" /> */}
+          {/* <source src="/videos/hero-video.mp4" type="video/mp4" /> */}
         </video>
 
         {/* Overlay Gradient */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/80" />
 
         {/* Animated Shapes */}
-        <div className="absolute top-20 right-20 w-72 h-72 bg-primary/20 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute top-20 right-20 w-72 h-72 bg-primary/20 rounded-full blur-2xl animate-pulse" />
         <div className="absolute bottom-20 left-20 w-96 h-96 bg-secondary/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1s" }} />
       </div>
 
@@ -87,7 +87,7 @@ export const HeroSection: FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight"
+            className="text-5xl md:text-6xl lg:text-7xl font-bold !text-[#fff] leading-tight"
           >
             Get Your Manuscript <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-light to-secondary">

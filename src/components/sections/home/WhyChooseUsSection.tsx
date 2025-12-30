@@ -7,33 +7,38 @@ import { motion } from "framer-motion";
 const reasons = [
   {
     title: "100% Creative Control",
-    image: "/images/choose1.webp",
+    image: "/images/home/choose1.webp",
   },
   {
     title: "Retain All Your Rights & Royalties",
-    image: "/images/choose2.webp",
+    image: "/images/home/choose2.webp",
   },
   {
     title: "Personalized Communication Throughout the Publishing Process",
-    image: "/images/choose3.webp",
+    image: "/images/home/choose3.webp",
   },
   {
     title: "Comprehensive Services All in One Place",
-    image: "/images/choose4.webp",
+    image: "/images/home/choose4.webp",
   },
   {
     title: "World-class Publishing Make Your Book Stand Out",
-    image: "/images/choose5.webp",
+    image: "/images/home/choose5.webp",
   },
   {
     title: "Transparent Pricing — No Hidden Fees, No Surprise Costs",
-    image: "/images/choose6.webp",
+    image: "/images/home/choose6.webp",
   },
 ];
 
 export const WhyChooseUsSection: FC = () => {
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-br from-background to-secondary/5">
+        <section
+      className="py-16 md:py-24  relative overflow-hidden bg-gradient-to-br from-primary/5 via-secondary/5 to-primary/10"
+      style={{
+        backgroundImage: 'url("/images/home/pan-bg.webp") center/cover no-repeat',
+      }}
+    >
       <div className="container px-4">
         {/* Header */}
         <motion.div
@@ -42,13 +47,13 @@ export const WhyChooseUsSection: FC = () => {
           viewport={{ once: true }}
           className="text-center space-y-4 mb-16"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold !bg-gradient-to-br !from-foreground !to-foreground/60 !bg-clip-text !text-transparent">
+          <h2 className="text-3xl md:text-4xl lg:text-6xl font-bold !bg-gradient-to-br !from-foreground !to-foreground/60 !bg-clip-text !text-transparent">
             Why Authors Choose Us
           </h2>
         </motion.div>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1 bg-gray-600/30 shadow-lg">
           {reasons.map((reason, index) => (
             <motion.div
               key={index}
@@ -58,7 +63,7 @@ export const WhyChooseUsSection: FC = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="group relative"
             >
-              <div className="flex flex-col items-center text-center space-y-6 p-8 rounded-2xl bg-card border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 h-full">
+              <div className="flex flex-col items-center text-center space-y-6 p-8  bg-card border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 h-full">
                 {/* Icon */}
                 <div className="relative w-20 h-20 flex-shrink-0">
                   <Image

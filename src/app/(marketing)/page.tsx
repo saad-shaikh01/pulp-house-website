@@ -16,7 +16,7 @@ import { FAQSection } from "@/components/sections/home/FAQSection";
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen bg-background">
+    <div className="flex flex-col min-h-screen bg-background justify-center ">
       {/* 1. Hero Section with Video Background & Stats Counter */}
       <HeroSection />
 
@@ -43,7 +43,7 @@ export default function Home() {
       <CTASection
         title="The Premium Self-Publishing Partner for U.S. and International Markets"
         description="You poured your effort into writing the book. Now, leave the publishing to our professional staff, with great attention, and global coverage. We ensure you have a shining project and have the ultimate benefit: 100% of the royalties are yours. Every single time."
-        imageSrc="/images/cta1.webp"
+        imageSrc="/images/home/cta-left.webp"
         imageAlt="Professional publishing services"
         primaryButtonText="Book Free Consultation"
         variant="spotlight"
@@ -60,7 +60,7 @@ export default function Home() {
       <CTASection
         title="Your Book Deserves the Best Publishing Support"
         description="We understand that every author's journey is unique. Contact us to learn how our personalized book publishing services can help you achieve your publishing goals with ease."
-        imageSrc="/images/cta-left.webp"
+        imageSrc="/images/home/cta-left.webp"
         imageAlt="Book marketing experts"
         primaryButtonText="Get Started Now"
         variant="diagonal"
@@ -74,7 +74,7 @@ export default function Home() {
       <CTASection
         title="Your e-Book Deserves to Be Read"
         description="You've put your heart into writing your story now let us help you share it with the world. From expert editing to eye-catching design and global distribution, we make publishing simple, smooth, and stress-free."
-        imageSrc="/images/cta-1.webp"
+        imageSrc="/images/home/cta-1.webp"
         imageAlt="Person reading book"
         primaryButtonText="Start Your Journey"
         variant="floating"
@@ -106,7 +106,7 @@ export default function Home() {
       <CTASection
         title="Schedule a Free Consultation"
         description="Connect with our publishing specialists to explore customized strategies for editing, design, and distribution crafted to help your eBook succeed."
-        imageSrc="/images/cta2.webp"
+        imageSrc="/images/home/cta2.webp"
         imageAlt="Consultation meeting"
         primaryButtonText="Book Your Call"
         variant="split"
@@ -121,7 +121,7 @@ export default function Home() {
         title="Ready to see your story on shelves?"
         subtitle="Let's make it happen."
         description="Avail the Best Self-Publishing Tools for Indie Authors in USA. Transform your manuscript into a professionally published book that reaches readers worldwide."
-        imageSrc="/images/cta4.webp"
+        imageSrc="/images/home/cta4.webp"
         imageAlt="Reading on armchair"
         primaryButtonText="Request a Quote"
         variant="minimal"

@@ -40,7 +40,7 @@ const steps = [
 
 export const HowItWorksSection: FC = () => {
   return (
-    <section className="py-24 md:py-32 bg-gradient-to-b from-background via-secondary/5 to-background relative overflow-hidden">
+    <section className="py-24 md:py-32 bg-gradient-to-b from-background via-secondary/5 to-background relative ">
       {/* Background pattern */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(139,92,246,0.1)_0%,transparent_100%)]" />
 
@@ -116,15 +116,15 @@ export const HowItWorksSection: FC = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="lg:col-span-5 sticky top-24"
+            className="lg:col-span-5 sticky top-24 "
           >
             <div className="relative">
               <div className="relative w-full aspect-square rounded-3xl overflow-hidden shadow-2xl">
                 <Image
-                  src="/images/how-work.webp"
+                  src="/images/home/how-work.webp"
                   alt="How it works"
                   fill
-                  className="object-cover"
+                  className="object-contain"
                 />
               </div>
               {/* Decorative gradient */}

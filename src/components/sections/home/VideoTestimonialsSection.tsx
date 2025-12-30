@@ -22,32 +22,37 @@ const DEFAULT_VIDEOS = [
 export const VideoTestimonialsSection: FC<VideoTestimonialsSectionProps> = ({
   videos = DEFAULT_VIDEOS,
   title = "Verified Reviews of Our Publishing Services",
-  subtitle = "Don't just take our word for it. Listen to the reviews from authors, just like you, across the country that experienced the quality and commitment of The Pulp House Publishing."
+  subtitle = "Don't just take our word for it. Listen to the reviews from authors, just like you, across the country that experienced the quality and commitment of The Pulp House Publishing.",
 }) => {
   return (
-    <section className="py-24 md:py-32 bg-gradient-to-b from-primary/5 to-background relative overflow-hidden">
+    <section
+      className="relative overflow-hidden py-16 md:py-24"
+      style={{
+        background: 'url("/images/home/pan-bg.webp") center/cover no-repeat',
+      }}
+    >
       <div className="container px-4">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center max-w-3xl mx-auto mb-16"
+          className="mx-auto mb-16 max-w-3xl text-center"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border border-primary/20 rounded-full text-sm font-semibold text-primary backdrop-blur-sm mb-4">
-            <Star className="w-4 h-4 fill-current" />
+          <div className="bg-primary/10 border-primary/20 text-primary mb-4 inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm font-semibold backdrop-blur-sm">
+            <Star className="h-4 w-4 fill-current" />
             Client Testimonials
           </div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold !bg-gradient-to-br !from-foreground !to-foreground/60 !bg-clip-text !text-transparent mb-4">
+          <h2 className="!from-foreground !to-foreground/60 mb-4 !bg-gradient-to-br !bg-clip-text text-3xl font-bold !text-transparent md:text-4xl lg:text-5xl">
             {title}
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-muted-foreground mx-auto max-w-2xl text-lg">
             {subtitle}
           </p>
         </motion.div>
 
         {/* Video Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {videos.map((videoSrc, index) => (
             <motion.div
               key={index}
@@ -57,7 +62,7 @@ export const VideoTestimonialsSection: FC<VideoTestimonialsSectionProps> = ({
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="group relative"
             >
-              <div className="relative aspect-[9/16] rounded-2xl overflow-hidden bg-black shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+              <div className="relative overflow-hidden rounded-2xl bg-black shadow-xl transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl max-w-[400px]">
                 <video
                   src={videoSrc}
                   autoPlay
@@ -65,26 +70,26 @@ export const VideoTestimonialsSection: FC<VideoTestimonialsSectionProps> = ({
                   loop
                   controls
                   playsInline
-                  className="w-full h-full object-cover"
-                  style={{ maxHeight: "500px" }}
+                  className="h-full w-full object-cover"
+                  // style={{ maxHeight: "500px" }}
                 />
 
                 {/* Overlay gradient on hover */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
                 {/* Play icon overlay */}
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-                  <div className="w-16 h-16 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center">
-                    <Play className="w-8 h-8 text-white fill-current" />
+                <div className="pointer-events-none absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                  <div className="flex h-16 w-16 items-center justify-center rounded-full bg-white/20 backdrop-blur-md">
+                    <Play className="h-8 w-8 fill-current text-white" />
                   </div>
                 </div>
 
                 {/* Border glow effect */}
-                <div className="absolute inset-0 border-2 border-transparent group-hover:border-primary/50 rounded-2xl transition-all duration-300" />
+                <div className="group-hover:border-primary/50 absolute inset-0 rounded-2xl border-2 border-transparent transition-all duration-300" />
               </div>
 
               {/* Decorative gradient blob */}
-              <div className="absolute -inset-2 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10" />
+              <div className="from-primary/20 to-secondary/20 absolute -inset-2 -z-10 rounded-2xl bg-gradient-to-br opacity-0 blur-xl transition-opacity duration-300 group-hover:opacity-100" />
             </motion.div>
           ))}
         </div>

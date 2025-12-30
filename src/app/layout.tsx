@@ -2,6 +2,8 @@ import "@/styles/globals.css";
 import { cn, generateMetadata } from "@/functions";
 import { inter, satoshi } from "@/constants";
 import { ThemeProvider } from "@/components/global/theme-provider";
+import { Header } from "@/components/layout/Header";
+import { Footer } from "@/components/layout/Footer";
 
 export const metadata = generateMetadata();
 
@@ -14,9 +16,9 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
-          "min-h-screen dark:bg-background dark:text-foreground antialiased font-default overflow-x-hidden !scrollbar-hide",
-          inter.variable,
-          satoshi.variable
+          "min-h-screen dark:bg-background dark:text-foreground antialiased font-sans overflow-x-hidden !scrollbar-hide max-w-[1920px] mx-auto",
+          // inter.variable,
+          // satoshi.variable
         )}
       >
         {/* <GoogleAnalytics /> */}
@@ -40,7 +42,9 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <Header />
           {children}
+          <Footer />
         </ThemeProvider>
       </body>
     </html>

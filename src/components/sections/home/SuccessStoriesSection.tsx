@@ -10,31 +10,31 @@ const testimonials = [
     name: "Jessica M.",
     title: "Memoir Author, Finding My Way",
     text: "I'd been sitting on my memoir for almost two years because I didn't know where to begin. I wanted it to be written in my voice and to look professional, but I was intimidated by all the publishing steps. But working with The Pulp House Publishing made it easy! My writer was patient, the designer captured the emotion of my story perfectly, and they even helped me set up my Amazon page and market my book. When I held my printed book for the first time, I actually cried. I felt accomplished. 10/10.",
-    book: "/images/book1.webp",
+    book: "/images/home/book1.webp",
   },
   {
     name: "Aaron B.",
     title: `Fantasy Author, "The Shadow Gate"`,
     text: "I had a finished manuscript but no idea what to do next. I tried researching self-publishing on my own, but it was overwhelming. Formats, ISBNs, cover specs, everything. I didn't even know the meaning of most of those things. The team at The Pulp House Publishing took over and handled it all professionally while keeping me involved creatively. My book cover blew me away, and now my novel is available on Amazon and Apple Books. I finally feel like a real author.",
-    book: "/images/book2.webp",
+    book: "/images/home/book2.webp",
   },
   {
     name: "Maya L.",
     title: `Children's Book Author, "The Little Star Who Could"`,
     text: "I had a story and a few sketches, but I wasn't sure if I could actually make a children's book on my own. They paired me with an illustrator who brought my characters to life. Every page looked magical. The writer only had my illustrations to work with, but they knew exactly what I wanted to say. They also handled the layout, printing, and eBook version so it would reach parents and teachers easily. Now I see photos of kids reading my book. It's the most amazing feeling.",
-    book: "/images/book3.webp",
+    book: "/images/home/book3.webp",
   },
   {
     name: "David R.",
     title: `Business Author, "Lead Like You Mean It"`,
     text: "As a corporate trainer, I'd wanted to turn my workshop material into a book for years, but I didn't know how it was possible, especially with my busy schedule. The editorial team helped me turn my scattered notes into a structured, engaging business book. The design looked clean and professional, absolutely perfect for my audience. I had to give them only three revisions, perfectionist that I am, and they catered well. Within weeks of launching, my book became a powerful tool for my speaking engagements. I recommend The Pulp House Publishing.",
-    book: "/images/book4.webp",
+    book: "/images/home/book4.webp",
   },
   {
     name: "Sofia T.",
     title: `Poet, "Echoes Between Lines"`,
     text: "Well, I guess this is it. The book seems to be a hit with my family! I thought self-publishing poetry would be too niche or complicated, but they completely changed my mind. They treated my work like art (as it was), helping me choose typography, layout, and even the paper texture to match the tone of my poems. Ah, couldn't have asked for a better team! The final book felt personal and beautiful, like a piece of me in print. It's now available worldwide, and I'm so proud of it. Thank you, The Pulp House Publishing!",
-    book: "/images/book5.webp",
+    book: "/images/home/book5.webp",
   },
 ];
 

@@ -5,14 +5,14 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 
 const platforms = [
-  { name: "Amazon Kindle", logo: "/images/platforms/amazon.svg" },
-  { name: "IngramSpark", logo: "/images/platforms/ingram-spark.png" },
-  { name: "Google Play Books", logo: "/images/platforms/google-play-book.png" },
-  { name: "Kindle", logo: "/images/platforms/kindle.svg" },
-  { name: "ACX", logo: "/images/platforms/acx.png" },
-  { name: "Apple Books", logo: "/images/platforms/pub_logo_8.webp" },
-  { name: "Kobo", logo: "/images/platforms/kobo.svg" },
-  { name: "iBooks", logo: "/images/platforms/pub_logo_5.webp" },
+  { name: "Amazon Kindle", logo: "/images/bg/amazon.svg" },
+  { name: "IngramSpark", logo: "/images/bg/ingram-spark.png" },
+  { name: "Google Play Books", logo: "/images/bg/google-play-book.png" },
+  { name: "Kindle", logo: "/images/bg/kindle.svg" },
+  { name: "ACX", logo: "/images/bg/acx.png" },
+  { name: "Apple Books", logo: "/images/bg/pub_logo_8.webp" },
+  { name: "Kobo", logo: "/images/bg/kobo.svg" },
+  { name: "iBooks", logo: "/images/bg/pub_logo_5.webp" },
 ];
 
 export const TrustedPlatformsSection: FC = () => {

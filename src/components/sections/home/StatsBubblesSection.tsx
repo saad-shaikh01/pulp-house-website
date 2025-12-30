@@ -7,7 +7,14 @@ import { Sparkles, TrendingUp, Users, Clock } from "lucide-react";
 
 export const StatsBubblesSection: FC = () => {
   return (
-    <section className="py-24 md:py-32 relative overflow-hidden bg-gradient-to-br from-primary/5 via-secondary/5 to-primary/10">
+    // <section className="py-24 md:py-32 relative overflow-hidden bg-gradient-to-br from-primary/5 via-secondary/5 to-primary/10">
+  
+      <section
+      className="py-16 md:py-24  relative overflow-hidden bg-gradient-to-br from-primary/5 via-secondary/5 to-primary/10"
+      style={{
+        backgroundImage: 'url("/images/home/pan-bg.webp") center/cover no-repeat',
+      }}
+    >
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl animate-pulse" />
@@ -30,7 +37,7 @@ export const StatsBubblesSection: FC = () => {
             </div>
 
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold !bg-gradient-to-br !from-primary !via-secondary !to-primary-light !bg-clip-text !text-transparent leading-tight">
-              The Pulp House Publishing
+               The Pulp House Publishing at a Quick Glance
             </h2>
 
             <p className="text-xl text-muted-foreground">

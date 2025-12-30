@@ -14,7 +14,7 @@ interface TopBarProps {
 
 export const TopBar: FC<TopBarProps> = ({ className }) => {
   return (
-    <div className={cn("bg-primary text-primary-foreground", className)}>
+    <div className={cn("bg-primary text-primary-foreground px-5", className)}>
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 items-center py-6">
           {/* Logo + Tagline - Left Side */}
@@ -22,7 +22,7 @@ export const TopBar: FC<TopBarProps> = ({ className }) => {
             <div className="flex items-center gap-3">
               <Link href="/" className="flex-shrink-0" aria-label="navigate to home page">
                 <Image
-                  src="/images/logo-white.webp"
+                  src="/images/logo/logo-white.webp"
                   alt={SITE_CONFIG.name}
                   title={SITE_CONFIG.name}
                   width={231}

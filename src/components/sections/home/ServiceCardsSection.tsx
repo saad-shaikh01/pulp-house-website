@@ -11,7 +11,7 @@ const services = [
     title: "Book Production",
     subtitle: "Blank Pages into a Polished Manuscript",
     description: "Our ghostwriting, editorial development, and professional book editing services help you write and refine your story, strengthen your message, and perfect your voice.",
-    image: "/images/book-production.webp",
+    image: "/images/home/book-production.webp",
     color: "from-purple-500 to-indigo-600",
     btnColor: "bg-purple-600 hover:bg-purple-700",
   },
@@ -19,7 +19,7 @@ const services = [
     title: "Book Design",
     subtitle: "Beautiful Books That Captivate",
     description: "Our design team specializes in stunning book covers, elegant page layouts, and creative illustrations. We craft visuals that make your story irresistible.",
-    image: "/images/book-design.webp",
+    image: "/images/home/book-design.webp",
     color: "from-pink-500 to-rose-600",
     btnColor: "bg-pink-600 hover:bg-pink-700",
   },
@@ -27,7 +27,7 @@ const services = [
     title: "Digital & Physical Production",
     subtitle: "Your Book Available Everywhere Readers Are",
     description: "We convert, format, and produce your book for print, eBook, and audiobook. Explore our publishing packages to find what suits your requirements.",
-    image: "/images/digital-physical.webp",
+    image: "/images/home/digital-physical.webp",
     color: "from-blue-500 to-cyan-600",
     btnColor: "bg-blue-600 hover:bg-blue-700",
   },
@@ -35,7 +35,7 @@ const services = [
     title: "Marketing & Author Branding",
     subtitle: "Get Noticed and Build Your Author Brand",
     description: "We manage launch campaigns, social media, SEO, author websites, and more so readers find (and remember) you.",
-    image: "/images/marketing.webp",
+    image: "/images/home/marketing.webp",
     color: "from-indigo-600 to-purple-700",
     btnColor: "bg-indigo-700 hover:bg-indigo-800",
   },
@@ -43,7 +43,7 @@ const services = [
     title: "Global Distribution",
     subtitle: "Reach Readers Worldwide",
     description: "We facilitate book distribution for self-published authors through Amazon, Apple Books, Kobo, IngramSpark, and more. Focus on your next masterpiece while we handle the setup and global reach.",
-    image: "/images/global-distribution.webp",
+    image: "/images/home/global-distribution.webp",
     color: "from-gray-700 to-gray-900",
     btnColor: "bg-gray-800 hover:bg-gray-900",
   },
@@ -73,7 +73,7 @@ export const ServiceCardsSection: FC = () => {
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 }}
               >
-                <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
+                <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold !text-[#ffff] mb-4">
                   Our Book Publishing<br />Services for Indie Authors
                 </h2>
               </motion.div>
