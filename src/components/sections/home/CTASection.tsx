@@ -30,7 +30,7 @@ const SpotlightCTA: FC<CTASectionProps> = ({
   primaryButtonHref = "/get-free-quote",
 }) => {
   return (
-    <section className="relative py-20 md:py-32 bg-gradient-to-b from-gray-950 via-primary/20 to-gray-950 overflow-hidden">
+    <section className="relative py-20 md:py-32 bg-gradient-to-b from-background via-primary/20 to-background overflow-hidden">
       {/* Spotlight effect */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-gradient-radial from-secondary/30 via-primary/10 to-transparent blur-3xl" />
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-secondary/20 rounded-full blur-3xl" />
@@ -39,7 +39,7 @@ const SpotlightCTA: FC<CTASectionProps> = ({
       {[...Array(20)].map((_, i) => (
         <motion.div
           key={i}
-          className="absolute w-1 h-1 bg-white/40 rounded-full"
+          className="absolute w-1 h-1 bg-foreground/40 rounded-full"
           style={{
             left: `${Math.random() * 100}%`,
             top: `${Math.random() * 100}%`,
@@ -78,7 +78,7 @@ const SpotlightCTA: FC<CTASectionProps> = ({
             </motion.div>
 
             <div>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4 leading-tight">
                 {title}
               </h2>
               {subtitle && (
@@ -88,7 +88,7 @@ const SpotlightCTA: FC<CTASectionProps> = ({
               )}
             </div>
 
-            <p className="text-lg md:text-xl text-gray-300 leading-relaxed max-w-xl">
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-xl">
               {description}
             </p>
 
@@ -322,7 +322,7 @@ const FloatingCTA: FC<CTASectionProps> = ({
                     href={`tel:${SITE_CONFIG.phone}`}
                     whileHover={{ scale: 1.03 }}
                     whileTap={{ scale: 0.97 }}
-                    className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-2xl font-bold text-foreground bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+                    className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-2xl font-bold text-foreground bg-card hover:bg-card/80 border border-border transition-colors"
                   >
                     <Phone className="w-5 h-5" />
                     {SITE_CONFIG.phone}
@@ -387,7 +387,7 @@ const SplitCTA: FC<CTASectionProps> = ({
     <section className="relative min-h-[600px] lg:min-h-[700px] overflow-hidden">
       <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[inherit]">
         {/* Left side - Dark with content */}
-        <div className="relative bg-gray-950 py-16 lg:py-24 flex items-center">
+        <div className="relative bg-background py-16 lg:py-24 flex items-center">
           {/* Animated gradient overlay */}
           <motion.div
             className="absolute inset-0 bg-gradient-to-br from-primary/30 via-transparent to-secondary/20"
@@ -413,7 +413,7 @@ const SplitCTA: FC<CTASectionProps> = ({
               <span className="text-secondary font-semibold uppercase tracking-wider text-sm">Featured</span>
             </div>
 
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-foreground leading-tight">
               {title}
             </h2>
             {subtitle && (
@@ -422,7 +422,7 @@ const SplitCTA: FC<CTASectionProps> = ({
               </p>
             )}
 
-            <p className="text-lg text-gray-300 max-w-lg leading-relaxed">
+            <p className="text-lg text-muted-foreground max-w-lg leading-relaxed">
               {description}
             </p>
 
@@ -450,7 +450,7 @@ const SplitCTA: FC<CTASectionProps> = ({
             className="object-cover"
           />
           {/* Gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-r from-gray-950 via-transparent to-transparent lg:from-gray-950/80" />
+          <div className="absolute inset-0 bg-gradient-to-r from-background via-transparent to-transparent lg:from-background/80" />
           <div className="absolute inset-0 bg-gradient-to-t from-secondary/30 via-transparent to-primary/20" />
 
           {/* Decorative corner element */}
@@ -485,7 +485,7 @@ const CinematicCTA: FC<CTASectionProps> = ({
           className="object-cover"
         />
         {/* Multi-layer gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-gray-950 via-gray-950/95 to-gray-950/70" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/95 to-background/70" />
         <div className="absolute inset-0 bg-gradient-to-t from-primary/40 via-transparent to-secondary/30" />
       </div>
 
@@ -517,7 +517,7 @@ const CinematicCTA: FC<CTASectionProps> = ({
               <div className="w-16 h-px bg-gradient-to-l from-transparent to-secondary" />
             </div>
 
-            <h2 className="text-4xl md:text-6xl lg:text-7xl font-black text-white leading-tight">
+            <h2 className="text-4xl md:text-6xl lg:text-7xl font-black text-foreground leading-tight">
               {title}
             </h2>
             {subtitle && (
@@ -537,7 +537,7 @@ const CinematicCTA: FC<CTASectionProps> = ({
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.4 }}
-              className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed"
+              className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed"
             >
               {description}
             </motion.p>

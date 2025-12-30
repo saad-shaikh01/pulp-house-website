@@ -5,6 +5,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, Sparkles } from "lucide-react";
+import { SITE_CONFIG } from "@/lib/data";
+import { ButtonV2 } from "@/components/ui/button-v2";
+import { PhoneButtonV2 } from "@/components/ui/phone-button-v2";
 
 const services = [
   {
@@ -73,27 +76,30 @@ export const ServiceCardsSection: FC = () => {
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 }}
               >
-                <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold !text-[#ffff] mb-4">
+                <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
                   Our Book Publishing<br />Services for Indie Authors
                 </h2>
               </motion.div>
 
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
-                <Link
+                <ButtonV2
                   href="/get-free-quote"
-                  className="group relative px-8 py-4 bg-white text-primary rounded-full text-lg font-semibold overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+                  variant="default"
+                  size="lg"
+                  rounded="full"
+                  animation="scaleLift"
+                  iconRight={ArrowRight}
+                  className="bg-white text-primary hover:bg-white/90 shadow-2xl"
                 >
-                  <span className="relative z-10 flex items-center gap-2">
-                    Request a Quote
-                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                  </span>
-                </Link>
-                <a
-                  href="tel:888-909-9431"
-                  className="px-8 py-4 bg-white/10 hover:bg-white/20 border-2 border-white/30 hover:border-white text-white rounded-full text-lg font-semibold backdrop-blur-sm transition-all duration-300 hover:scale-105"
-                >
-                  888-909-9431
-                </a>
+                  Request a Quote
+                </ButtonV2>
+                <PhoneButtonV2
+                  phone={SITE_CONFIG.phone}
+                  variant="glass"
+                  size="lg"
+                  rounded="full"
+                  animation="scaleLift"
+                />
               </div>
             </div>
 

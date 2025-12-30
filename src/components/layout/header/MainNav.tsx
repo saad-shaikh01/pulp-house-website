@@ -38,7 +38,7 @@ export const MainNav: FC<MainNavProps> = ({ className }) => {
                   <NavigationMenuItem key={link.href}>
                     {link.children ? (
                       <>
-                        <NavigationMenuTrigger className="h-auto bg-transparent px-6 py-2 text-base font-bold text-white hover:bg-white/10 data-[state=open]:bg-white/10">
+                        <NavigationMenuTrigger className="h-auto bg-transparent px-6 py-2 text-base font-bold text-secondary-foreground hover:bg-white/10 data-[state=open]:bg-white/10">
                           {link.label}
                         </NavigationMenuTrigger>
                         <NavigationMenuContent>
@@ -63,7 +63,7 @@ export const MainNav: FC<MainNavProps> = ({ className }) => {
                           href={link.href}
                           className={cn(
                             navigationMenuTriggerStyle(),
-                            "h-auto bg-transparent px-6 py-2 text-base font-bold text-white hover:bg-white/10",
+                            "h-auto bg-transparent px-6 py-2 text-base font-bold text-secondary-foreground hover:bg-white/10",
                           )}
                         >
                           {link.label}
@@ -94,7 +94,7 @@ export const MainNav: FC<MainNavProps> = ({ className }) => {
               </SheetTrigger>
               <SheetContent
                 side="left"
-                className="bg-secondary w-[300px] overflow-y-auto p-0 text-white"
+                className="bg-secondary w-[300px] overflow-y-auto p-0 text-secondary-foreground"
               >
                 <div className="px-4 py-6">
                   <div className="space-y-1">

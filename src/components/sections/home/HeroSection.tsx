@@ -1,10 +1,10 @@
 "use client";
 
 import { FC, useEffect, useRef, useState } from "react";
-import Link from "next/link";
-import { Phone } from "lucide-react";
 import { motion, useInView } from "framer-motion";
 import { SITE_CONFIG } from "@/lib/data";
+import { ButtonV2 } from "@/components/ui/button-v2";
+import { PhoneButtonV2 } from "@/components/ui/phone-button-v2";
 
 export const HeroSection: FC = () => {
   const statsRef = useRef<HTMLDivElement>(null);
@@ -61,7 +61,7 @@ export const HeroSection: FC = () => {
         </video>
 
         {/* Overlay Gradient */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/80" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/60 to-background/80" />
 
         {/* Animated Shapes */}
         <div className="absolute top-20 right-20 w-72 h-72 bg-primary/20 rounded-full blur-2xl animate-pulse" />
@@ -77,7 +77,7 @@ export const HeroSection: FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <span className="inline-block px-4 py-2 bg-primary/20 border border-primary/30 rounded-full text-sm font-semibold text-white backdrop-blur-sm">
+            <span className="inline-block px-4 py-2 bg-primary/20 border border-primary/30 rounded-full text-sm font-semibold text-foreground backdrop-blur-sm">
               Trusted Full-Service Book Publishing • USA
             </span>
           </motion.div>
@@ -87,7 +87,7 @@ export const HeroSection: FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-5xl md:text-6xl lg:text-7xl font-bold !text-[#fff] leading-tight"
+            className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight"
           >
             Get Your Manuscript <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-light to-secondary">
@@ -101,7 +101,7 @@ export const HeroSection: FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-lg md:text-xl text-gray-200 max-w-3xl mx-auto"
+            className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto"
           >
             Ghostwriting • Editing • Design • Global Distribution • Marketing — we do the heavy
             lifting while you create.
@@ -114,19 +114,21 @@ export const HeroSection: FC = () => {
             transition={{ duration: 0.6, delay: 0.6 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-4"
           >
-            <Link
+            <ButtonV2
               href="/get-free-quote"
-              className="px-8 py-4 bg-primary hover:bg-primary/90 text-white rounded-full text-lg font-semibold transition-all duration-200 shadow-lg hover:shadow-primary/50 hover:scale-105"
+              variant="cta"
+              size="lg"
+              rounded="full"
+              animation="scaleLift"
             >
               Book Free Consultation
-            </Link>
-            <a
-              href={`tel:${SITE_CONFIG.phone}`}
-              className="px-8 py-4 bg-white/10 hover:bg-white/20 border-2 border-white/30 hover:border-white/50 text-white rounded-full text-lg font-semibold transition-all duration-200 backdrop-blur-sm flex items-center gap-2"
-            >
-              <Phone className="h-5 w-5" />
-              {SITE_CONFIG.phone}
-            </a>
+            </ButtonV2>
+            <PhoneButtonV2
+              phone={SITE_CONFIG.phone}
+              variant="glass"
+              size="lg"
+              rounded="full"
+            />
           </motion.div>
 
           {/* Stats */}
@@ -138,22 +140,22 @@ export const HeroSection: FC = () => {
             className="grid grid-cols-1 sm:grid-cols-3 gap-8 pt-12"
           >
             <div className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-white mb-2">
+              <div className="text-4xl md:text-5xl font-bold text-foreground mb-2">
                 {counters.authors.toLocaleString()}+
               </div>
-              <div className="text-sm text-gray-300">Authors Published</div>
+              <div className="text-sm text-muted-foreground">Authors Published</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-white mb-2">
+              <div className="text-4xl md:text-5xl font-bold text-foreground mb-2">
                 {counters.reviews.toLocaleString()}+
               </div>
-              <div className="text-sm text-gray-300">Five-Star Reviews</div>
+              <div className="text-sm text-muted-foreground">Five-Star Reviews</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-white mb-2">
+              <div className="text-4xl md:text-5xl font-bold text-foreground mb-2">
                 {counters.clients.toLocaleString()}+
               </div>
-              <div className="text-sm text-gray-300">Returning Clients</div>
+              <div className="text-sm text-muted-foreground">Returning Clients</div>
             </div>
           </motion.div>
         </div>
@@ -166,11 +168,11 @@ export const HeroSection: FC = () => {
         transition={{ duration: 1, delay: 1.5 }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
       >
-        <div className="w-6 h-10 border-2 border-white/30 rounded-full p-1">
+        <div className="w-6 h-10 border-2 border-foreground/30 rounded-full p-1">
           <motion.div
             animate={{ y: [0, 12, 0] }}
             transition={{ duration: 1.5, repeat: Infinity }}
-            className="w-1.5 h-1.5 bg-white rounded-full mx-auto"
+            className="w-1.5 h-1.5 bg-foreground rounded-full mx-auto"
           />
         </div>
       </motion.div>

@@ -2,8 +2,10 @@
 
 import { FC } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { motion } from "framer-motion";
+import { SITE_CONFIG } from "@/lib/data";
+import { ButtonV2 } from "@/components/ui/button-v2";
+import { PhoneButtonV2 } from "@/components/ui/phone-button-v2";
 
 const journeySteps = [
   { number: "01", title: "Submissions", image: "/images/one.webp" },
@@ -15,7 +17,7 @@ const journeySteps = [
 
 export const PublishingJourneySection: FC = () => {
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-br from-pink-50 to-purple-50 dark:from-pink-950/20 dark:to-purple-950/20">
+    <section className="py-16 md:py-24 bg-gradient-to-br from-primary/5 to-secondary/10">
       <div className="container px-4">
         <div className="text-center space-y-4 mb-12">
           <motion.h2
@@ -47,7 +49,7 @@ export const PublishingJourneySection: FC = () => {
                   className="object-contain"
                 />
               </div>
-              <h3 className="text-base md:text-lg font-bold dark:text-foreground">
+              <h3 className="text-base md:text-lg font-bold text-foreground">
                 {step.title}
               </h3>
             </motion.div>
@@ -62,18 +64,23 @@ export const PublishingJourneySection: FC = () => {
           transition={{ duration: 0.6, delay: 0.6 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
-          <Link
+          <ButtonV2
             href="/get-free-quote"
-            className="px-8 py-4 bg-primary hover:bg-primary/90 text-white rounded-full text-lg font-semibold transition-all duration-200 shadow-lg hover:shadow-primary/50 hover:scale-105"
+            variant="cta"
+            size="lg"
+            rounded="full"
+            animation="scaleLift"
           >
             Request a Quote
-          </Link>
-          <a
-            href="tel:888-909-9431"
-            className="px-8 py-4 bg-white hover:bg-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 border-2 border-primary text-primary dark:text-white rounded-full text-lg font-semibold transition-all duration-200"
-          >
-            888-909-9431
-          </a>
+          </ButtonV2>
+          <PhoneButtonV2
+            phone={SITE_CONFIG.phone}
+            variant="outline"
+            size="lg"
+            rounded="full"
+            animation="scaleLift"
+            className="border-2 border-primary text-primary"
+          />
         </motion.div>
       </div>
     </section>

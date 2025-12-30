@@ -53,7 +53,7 @@ export const WhyChooseUsSection: FC = () => {
         </motion.div>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1 bg-gray-600/30 shadow-lg">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1 bg-border/30 shadow-lg">
           {reasons.map((reason, index) => (
             <motion.div
               key={index}

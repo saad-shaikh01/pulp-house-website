@@ -135,6 +135,20 @@
   --chart-3: 197 37% 24%;
   --chart-4: 43 74% 66%;
   --chart-5: 27 87% 67%;
+
+  /* NEW: Semantic text colors for theme-aware components */
+  --text-primary: var(--foreground);
+  --text-secondary: var(--muted-foreground);
+  --text-inverse: var(--background);
+
+  /* NEW: Surface colors for cards/overlays */
+  --surface-overlay-light: hsl(0 0% 100% / 0.1);
+  --surface-overlay-dark: hsl(0 0% 0% / 0.1);
+
+  /* NEW: Gradient tokens for reusability */
+  --gradient-primary: linear-gradient(to right, hsl(var(--primary)), hsl(var(--secondary)));
+  --gradient-accent: linear-gradient(to right, hsl(var(--primary-light)), hsl(var(--secondary)));
+  --gradient-text: linear-gradient(to right, hsl(var(--primary-light)), hsl(var(--secondary)));
 }
 
 .dark {
@@ -173,6 +187,10 @@
   --chart-3: 30 80% 55%;
   --chart-4: 280 65% 60%;
   --chart-5: 340 75% 55%;
+
+  /* NEW: Dark mode overrides for surface overlays */
+  --surface-overlay-light: hsl(0 0% 0% / 0.1);
+  --surface-overlay-dark: hsl(0 0% 100% / 0.1);
 }
 
 /* Custom Utilities that were previously plugins or manual */
@@ -463,18 +481,8 @@ img {
   background: linear-gradient(280deg, rgba(181,237,63,0.4) 0%, rgba(56,167,84,0.4) 48%);
 }
 
-/* Short version agar variables auto-switch hote hain */
-h1, h2, h3, h4, h5, h6 {
-  @apply 
-    /* Gradient Layout */
-    bg-gradient-to-br bg-clip-text text-transparent !font-sans
-
-    /* Light Mode Colors (Force Dark Gradient) */
-    from-slate-900 to-slate-500
-    
-    /* Dark Mode Colors (Force Light Gradient) */
-    dark:from-slate-100 dark:to-slate-400; 
-}
+/* REMOVED: Global h1-h6 gradient styling (conflicts with Heading component system) */
+/* Headings are now styled via the Heading component in src/components/ui/heading.tsx */
 
 /* Promo Ticker Marquee Animation */
 @keyframes marquee {

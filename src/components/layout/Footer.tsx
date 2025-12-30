@@ -24,7 +24,7 @@ export function Footer() {
   ];
 
   return (
-    <footer className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white">
+    <footer className="relative bg-gradient-to-br from-background via-card to-background text-foreground">
       <WaveDivider />
 
       <div className="container mx-auto px-4 py-12">
@@ -45,19 +45,19 @@ export function Footer() {
             <div className="space-y-4">
               <a
                 href={`tel:${SITE_CONFIG.phone}`}
-                className="flex items-start gap-3 p-4 bg-white/5 hover:bg-white/10 rounded-lg border border-white/10 hover:border-white/20 transition-all duration-200 backdrop-blur-sm group"
+                className="flex items-start gap-3 p-4 bg-card/50 hover:bg-card/80 rounded-lg border border-border hover:border-primary/50 transition-all duration-200 backdrop-blur-sm group"
               >
                 <Phone className="h-5 w-5 mt-0.5 text-secondary group-hover:text-primary-light transition-colors" />
                 <div>
-                  <div className="text-xs text-gray-400 mb-1">Call Us</div>
+                  <div className="text-xs text-muted-foreground mb-1">Call Us</div>
                   <div className="font-semibold">{SITE_CONFIG.phone}</div>
                 </div>
               </a>
 
-              <div className="flex items-start gap-3 p-4 bg-white/5 rounded-lg border border-white/10">
+              <div className="flex items-start gap-3 p-4 bg-card/50 rounded-lg border border-border">
                 <MapPin className="h-5 w-5 mt-0.5 text-secondary" />
                 <div>
-                  <div className="text-xs text-gray-400 mb-1">Location</div>
+                  <div className="text-xs text-muted-foreground mb-1">Location</div>
                   <div className="text-sm">{SITE_CONFIG.address}</div>
                 </div>
               </div>
@@ -69,7 +69,7 @@ export function Footer() {
                 href="#"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-4 bg-white/5 hover:bg-white/10 rounded-lg border border-white/10 hover:border-white/20 transition-all duration-200 flex items-center justify-center"
+                className="p-4 bg-card/50 hover:bg-card/80 rounded-lg border border-border hover:border-primary/50 transition-all duration-200 flex items-center justify-center"
               >
                 <Image
                   src="/images/trustpilot.webp"
@@ -83,7 +83,7 @@ export function Footer() {
                 href="#"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-4 bg-white/5 hover:bg-white/10 rounded-lg border border-white/10 hover:border-white/20 transition-all duration-200 flex items-center justify-center"
+                className="p-4 bg-card/50 hover:bg-card/80 rounded-lg border border-border hover:border-primary/50 transition-all duration-200 flex items-center justify-center"
               >
                 <Image
                   src="/images/bbb.webp"
@@ -101,7 +101,7 @@ export function Footer() {
                 href={SITE_CONFIG.socials.facebook}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 bg-white/5 hover:bg-primary-light rounded-full border border-white/10 hover:border-primary-light transition-all duration-200"
+                className="p-3 bg-card/50 hover:bg-primary-light rounded-full border border-border hover:border-primary-light transition-all duration-200"
                 aria-label="Facebook"
               >
                 <Facebook className="h-5 w-5" />
@@ -110,7 +110,7 @@ export function Footer() {
                 href={SITE_CONFIG.socials.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 bg-white/5 hover:bg-primary-light rounded-full border border-white/10 hover:border-primary-light transition-all duration-200"
+                className="p-3 bg-card/50 hover:bg-primary-light rounded-full border border-border hover:border-primary-light transition-all duration-200"
                 aria-label="Instagram"
               >
                 <Instagram className="h-5 w-5" />
@@ -120,13 +120,13 @@ export function Footer() {
 
           {/* Column 2: Company Links */}
           <div>
-            <h3 className="text-lg font-bold mb-4 text-white">Company</h3>
+            <h3 className="text-lg font-bold mb-4 text-foreground">Company</h3>
             <ul className="space-y-2">
               {companyLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-gray-300 hover:text-secondary transition-colors text-sm"
+                    className="text-muted-foreground hover:text-secondary transition-colors text-sm"
                   >
                     {link.label}
                   </Link>
@@ -137,13 +137,13 @@ export function Footer() {
 
           {/* Column 3: Services Column 1 */}
           <div>
-            <h3 className="text-lg font-bold mb-4 text-white">Services</h3>
+            <h3 className="text-lg font-bold mb-4 text-foreground">Services</h3>
             <ul className="space-y-2">
               {servicesColumn1.map((service) => (
                 <li key={service.href}>
                   <Link
                     href={service.href}
-                    className="text-gray-300 hover:text-secondary transition-colors text-sm"
+                    className="text-muted-foreground hover:text-secondary transition-colors text-sm"
                   >
                     {service.label}
                   </Link>
@@ -154,13 +154,13 @@ export function Footer() {
 
           {/* Column 4: Services Column 2 */}
           <div>
-            <h3 className="text-lg font-bold mb-4 text-white">More Services</h3>
+            <h3 className="text-lg font-bold mb-4 text-foreground">More Services</h3>
             <ul className="space-y-2">
               {servicesColumn2.map((service) => (
                 <li key={service.href}>
                   <Link
                     href={service.href}
-                    className="text-gray-300 hover:text-secondary transition-colors text-sm"
+                    className="text-muted-foreground hover:text-secondary transition-colors text-sm"
                   >
                     {service.label}
                   </Link>
@@ -171,8 +171,8 @@ export function Footer() {
         </div>
 
         {/* Copyright */}
-        <div className="mt-12 pt-8 border-t border-white/10 text-center">
-          <p className="text-sm text-gray-400">
+        <div className="mt-12 pt-8 border-t border-border text-center">
+          <p className="text-sm text-muted-foreground">
             © {new Date().getFullYear()} - {SITE_CONFIG.name}. All rights reserved.
           </p>
         </div>

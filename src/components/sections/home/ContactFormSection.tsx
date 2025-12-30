@@ -75,7 +75,7 @@ export const ContactFormSection: FC = () => {
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
             onSubmit={handleSubmit}
-            className="relative backdrop-blur-xl bg-white/50 dark:bg-gray-900/50 border border-white/20 dark:border-gray-800/50 rounded-3xl p-8 md:p-12 shadow-2xl"
+            className="relative backdrop-blur-xl bg-card/50 border border-border rounded-3xl p-8 md:p-12 shadow-2xl"
           >
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
               {/* Name Input */}
@@ -85,7 +85,7 @@ export const ContactFormSection: FC = () => {
                   name="name"
                   placeholder="Your Name"
                   required
-                  className="w-full px-6 py-4 bg-white/80 dark:bg-gray-800/80 border-2 border-border focus:border-primary rounded-xl text-foreground placeholder:text-muted-foreground transition-all duration-300 focus:ring-4 focus:ring-primary/20 group-hover:border-primary/50"
+                  className="w-full px-6 py-4 bg-card/80 border-2 border-border focus:border-primary rounded-xl text-foreground placeholder:text-muted-foreground transition-all duration-300 focus:ring-4 focus:ring-primary/20 group-hover:border-primary/50"
                 />
               </div>
 
@@ -96,7 +96,7 @@ export const ContactFormSection: FC = () => {
                   name="email"
                   placeholder="Your Email"
                   required
-                  className="w-full px-6 py-4 bg-white/80 dark:bg-gray-800/80 border-2 border-border focus:border-primary rounded-xl text-foreground placeholder:text-muted-foreground transition-all duration-300 focus:ring-4 focus:ring-primary/20 group-hover:border-primary/50"
+                  className="w-full px-6 py-4 bg-card/80 border-2 border-border focus:border-primary rounded-xl text-foreground placeholder:text-muted-foreground transition-all duration-300 focus:ring-4 focus:ring-primary/20 group-hover:border-primary/50"
                 />
               </div>
 
@@ -107,7 +107,7 @@ export const ContactFormSection: FC = () => {
                   name="phone"
                   placeholder="Your Phone"
                   required
-                  className="w-full px-6 py-4 bg-white/80 dark:bg-gray-800/80 border-2 border-border focus:border-primary rounded-xl text-foreground placeholder:text-muted-foreground transition-all duration-300 focus:ring-4 focus:ring-primary/20 group-hover:border-primary/50"
+                  className="w-full px-6 py-4 bg-card/80 border-2 border-border focus:border-primary rounded-xl text-foreground placeholder:text-muted-foreground transition-all duration-300 focus:ring-4 focus:ring-primary/20 group-hover:border-primary/50"
                 />
               </div>
             </div>

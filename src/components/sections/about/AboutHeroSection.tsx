@@ -2,10 +2,10 @@
 
 import { FC } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { motion } from "framer-motion";
 import { Star, Sparkles } from "lucide-react";
 import { PremiumButton } from "@/components/ui/premium-button";
+import { ButtonV2 } from "@/components/ui/button-v2";
 
 export const AboutHeroSection: FC = () => {
   return (
@@ -86,12 +86,16 @@ export const AboutHeroSection: FC = () => {
               <PremiumButton variant="gradient" icon href="#our-journey">
                 Read More
               </PremiumButton>
-              <Link
+              <ButtonV2
                 href="/contact-us"
-                className="inline-flex items-center justify-center px-8 py-4 rounded-2xl font-bold border-2 border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300"
+                variant="outline"
+                size="lg"
+                rounded="2xl"
+                animation="scaleLift"
+                className="border-2"
               >
                 Contact Us
-              </Link>
+              </ButtonV2>
             </motion.div>
           </motion.div>
 
@@ -114,7 +118,7 @@ export const AboutHeroSection: FC = () => {
                     priority
                   />
                   {/* Overlay gradient */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/30 via-transparent to-transparent" />
                 </div>
               </div>
 
@@ -125,7 +129,7 @@ export const AboutHeroSection: FC = () => {
                 transition={{ delay: 0.6, duration: 0.5 }}
                 className="absolute -bottom-8 -left-8 md:-left-12 w-[90%] max-w-sm"
               >
-                <div className="relative backdrop-blur-xl bg-white/90 dark:bg-gray-900/90 rounded-2xl p-6 shadow-2xl border border-white/20 dark:border-gray-800/50">
+                <div className="relative backdrop-blur-xl bg-card/90 rounded-2xl p-6 shadow-2xl border border-border">
                   {/* Decorative top border */}
                   <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-secondary to-primary rounded-t-2xl" />
 
@@ -138,7 +142,7 @@ export const AboutHeroSection: FC = () => {
                     {[...Array(4)].map((_, i) => (
                       <Star key={i} className="w-5 h-5 text-yellow-500 fill-yellow-500" />
                     ))}
-                    <Star className="w-5 h-5 text-gray-300" />
+                    <Star className="w-5 h-5 text-border" />
                   </div>
 
                   {/* Score */}

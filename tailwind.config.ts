@@ -63,11 +63,26 @@ const config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+
+        // NEW: Semantic color aliases for theme-aware components
+        'text-primary': 'hsl(var(--foreground))',
+        'text-secondary': 'hsl(var(--muted-foreground))',
+        'text-inverse': 'hsl(var(--background))',
+        'surface-overlay': {
+          light: 'hsl(0 0% 100% / 0.1)',
+          dark: 'hsl(0 0% 0% / 0.1)',
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+      },
+      backgroundImage: {
+        // NEW: Gradient utilities for theme-aware gradients
+        'gradient-primary': 'linear-gradient(to right, hsl(var(--primary)), hsl(var(--secondary)))',
+        'gradient-accent': 'linear-gradient(to right, hsl(var(--primary-light)), hsl(var(--secondary)))',
+        'gradient-text': 'linear-gradient(to right, hsl(var(--primary-light)), hsl(var(--secondary)))',
       },
       fontFamily: {
         // "heading": ["var(--font-satoshi)"],
