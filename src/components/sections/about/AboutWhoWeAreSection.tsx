@@ -107,7 +107,7 @@ export const AboutWhoWeAreSection: FC = () => {
               <div className="absolute -inset-4 bg-gradient-to-br from-primary/20 via-secondary/10 to-primary/20 rounded-[2rem] blur-2xl" />
 
               {/* Main image container */}
-              <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
+              <div className="relative aspect-[6/4] rounded-3xl overflow-hidden shadow-2xl">
                 <Image
                   src="/images/about-us/who-we-are.webp"
                   alt="Person reading a book"

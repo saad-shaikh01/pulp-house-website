@@ -28,7 +28,7 @@ export const VideoTestimonialsSection: FC<VideoTestimonialsSectionProps> = ({
     <section
       className="relative overflow-hidden py-16 md:py-24"
       style={{
-        background: 'url("/images/home/pan-bg.webp") center/cover no-repeat',
+        background: 'url("/images/pan-bg.webp") center/cover no-repeat',
       }}
     >
       <div className="container px-4">

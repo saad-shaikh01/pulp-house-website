@@ -6,11 +6,11 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 
 const journeySteps = [
-  { number: "01", title: "Submissions", image: "/images/home/one.webp" },
-  { number: "02", title: "Production & Design", image: "/images/home/two.webp" },
-  { number: "03", title: "Marketing", image: "/images/home/three.webp" },
-  { number: "04", title: "Distribution", image: "/images/home/four.webp" },
-  { number: "05", title: "Royalties", image: "/images/home/five.webp" },
+  { number: "01", title: "Submissions", image: "/images/one.webp" },
+  { number: "02", title: "Production & Design", image: "/images/two.webp" },
+  { number: "03", title: "Marketing", image: "/images/three.webp" },
+  { number: "04", title: "Distribution", image: "/images/four.webp" },
+  { number: "05", title: "Royalties", image: "/images/five.webp" },
 ];
 
 export const PublishingJourneySection: FC = () => {

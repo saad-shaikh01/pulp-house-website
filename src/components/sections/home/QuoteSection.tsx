@@ -9,7 +9,7 @@ export const QuoteSection: FC = () => {
     <section
       className="py-16 md:py-24 "
       style={{
-        background: 'url("/images/home/quote.webp") center/cover no-repeat',
+        background: 'url("/images/quote.webp") center/cover no-repeat',
       }}
     >
       <div className="container px-4 mx-auto">
@@ -23,7 +23,7 @@ export const QuoteSection: FC = () => {
           {/* Left Quote Icon */}
           <div className="absolute -top-8 -left-4  md:-left-12">
             <Image
-              src="/images/home/qright.webp"
+              src="/images/qright.webp"
               alt=""
               width={80}
               height={80}
@@ -45,7 +45,7 @@ export const QuoteSection: FC = () => {
           {/* Right Quote Icon */}
           <div className="absolute -right-4 -bottom-8  md:-right-12">
             <Image
-              src="/images/home/qleft.webp"
+              src="/images/qleft.webp"
               alt=""
               width={80}
               height={80}

@@ -12,7 +12,7 @@ export const StatsBubblesSection: FC = () => {
       <section
       className="py-16 md:py-24  relative overflow-hidden bg-gradient-to-br from-primary/5 via-secondary/5 to-primary/10"
       style={{
-        backgroundImage: 'url("/images/home/pan-bg.webp") center/cover no-repeat',
+        backgroundImage: 'url("/images/pan-bg.webp") center/cover no-repeat',
       }}
     >
       {/* Animated Background Elements */}

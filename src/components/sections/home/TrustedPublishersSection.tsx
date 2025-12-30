@@ -77,7 +77,7 @@ export const TrustedPublishersSection: FC = () => {
           >
             <div className="relative">
               <Image
-                src="/images/home/ctaImage.webp"
+                src="/images/ctaImage.webp"
                 alt="Best Book Publishers In USA"
                 width={413}
                 height={500}

@@ -72,7 +72,7 @@ export function Footer() {
                 className="p-4 bg-white/5 hover:bg-white/10 rounded-lg border border-white/10 hover:border-white/20 transition-all duration-200 flex items-center justify-center"
               >
                 <Image
-                  src="/images/trustpilot.svg"
+                  src="/images/trustpilot.webp"
                   alt="Trustpilot"
                   width={120}
                   height={40}
@@ -86,7 +86,7 @@ export function Footer() {
                 className="p-4 bg-white/5 hover:bg-white/10 rounded-lg border border-white/10 hover:border-white/20 transition-all duration-200 flex items-center justify-center"
               >
                 <Image
-                  src="/images/bbb.svg"
+                  src="/images/bbb.webp"
                   alt="BBB Accredited"
                   width={80}
                   height={40}

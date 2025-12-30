@@ -7,25 +7,25 @@ import { Sparkles } from "lucide-react";
 
 const cards = [
   {
-    image: "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?q=80&w=600&auto=format&fit=crop",
+    image: "/images/about-us/choose-1.webp",
     title: "Genre-Specific Expertise",
     description: "We know every genre has its quirks. We provide tailored guidance and strategies for every genre so you can find your perfect audience.",
     variant: "dark" as const,
   },
   {
-    image: "https://images.unsplash.com/photo-1587614382346-4ec70e388b28?q=80&w=600&auto=format&fit=crop",
+    image: "/images/about-us/choose-2.webp",
     title: "Custom Services for You",
     description: "Your book is unique. So, we make sure that our services are built around your story, your vision, and YOU.",
     variant: "light" as const,
   },
   {
-    image: "https://images.unsplash.com/photo-1455390582262-044cdead277a?q=80&w=600&auto=format&fit=crop",
+    image: "/images/about-us/choose-3.webp",
     title: "Author Inclusion in Every Step",
     description: "We are the only self-publishing firm that gives you the driver's seat. We guide, support, and make your ideas come to life.",
     variant: "dark" as const,
   },
   {
-    image: "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?q=80&w=600&auto=format&fit=crop",
+    image: "/images/about-us/choose-4.webp",
     title: "Fairest Price in the Market",
     description: "There are no hidden fees and no surprises. Just professional publishing that's fair, transparent, and totally worth it!",
     variant: "light" as const,
@@ -100,8 +100,7 @@ export const AboutWhyChooseUsSection: FC = () => {
                 {/* Image */}
                 <div className="relative h-48 md:h-56 overflow-hidden">
                   <Image
-                    // src={card.image}
-                    src={'/images/about-us/about-why-choose-us.webp'}
+                    src={card.image}
                     alt={card.title}
                     fill
                     className="object-cover group-hover:scale-110 transition-transform duration-700"

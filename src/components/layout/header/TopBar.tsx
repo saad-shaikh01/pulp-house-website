@@ -22,7 +22,7 @@ export const TopBar: FC<TopBarProps> = ({ className }) => {
             <div className="flex items-center gap-3">
               <Link href="/" className="flex-shrink-0" aria-label="navigate to home page">
                 <Image
-                  src="/images/logo/logo-white.webp"
+                  src="/images/logo-white.webp"
                   alt={SITE_CONFIG.name}
                   title={SITE_CONFIG.name}
                   width={231}

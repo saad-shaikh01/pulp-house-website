@@ -121,7 +121,7 @@ export const HowItWorksSection: FC = () => {
             <div className="relative">
               <div className="relative w-full aspect-square rounded-3xl overflow-hidden shadow-2xl">
                 <Image
-                  src="/images/home/how-work.webp"
+                  src="/images/how-work.webp"
                   alt="How it works"
                   fill
                   className="object-contain"

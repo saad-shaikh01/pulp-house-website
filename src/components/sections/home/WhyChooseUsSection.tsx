@@ -7,27 +7,27 @@ import { motion } from "framer-motion";
 const reasons = [
   {
     title: "100% Creative Control",
-    image: "/images/home/choose1.webp",
+    image: "/images/choose1.webp",
   },
   {
     title: "Retain All Your Rights & Royalties",
-    image: "/images/home/choose2.webp",
+    image: "/images/choose2.webp",
   },
   {
     title: "Personalized Communication Throughout the Publishing Process",
-    image: "/images/home/choose3.webp",
+    image: "/images/choose3.webp",
   },
   {
     title: "Comprehensive Services All in One Place",
-    image: "/images/home/choose4.webp",
+    image: "/images/choose4.webp",
   },
   {
     title: "World-class Publishing Make Your Book Stand Out",
-    image: "/images/home/choose5.webp",
+    image: "/images/choose5.webp",
   },
   {
     title: "Transparent Pricing — No Hidden Fees, No Surprise Costs",
-    image: "/images/home/choose6.webp",
+    image: "/images/choose6.webp",
   },
 ];
 
@@ -36,7 +36,7 @@ export const WhyChooseUsSection: FC = () => {
         <section
       className="py-16 md:py-24  relative overflow-hidden bg-gradient-to-br from-primary/5 via-secondary/5 to-primary/10"
       style={{
-        backgroundImage: 'url("/images/home/pan-bg.webp") center/cover no-repeat',
+        backgroundImage: 'url("/images/pan-bg.webp") center/cover no-repeat',
       }}
     >
       <div className="container px-4">
