@@ -1,0 +1,276 @@
+"use client";
+
+import { FC } from "react";
+import { Header } from "@/components/layout/Header";
+import { Footer } from "@/components/layout/Footer";
+import { ContactForm } from "@/components/forms/ContactForm";
+import { VideoTestimonialsSection } from "@/components/sections/home/VideoTestimonialsSection";
+import Image from "next/image";
+import { motion } from "framer-motion";
+import { Check, Phone, Circle } from "lucide-react";
+
+const ChildrensBookPublishingPage: FC = () => {
+  return (
+    <>
+      <Header />
+      <main className="min-h-screen bg-background relative z-40">
+
+        {/* Hero Section */}
+        <section className="py-20 md:py-28 bg-gradient-to-b from-primary/10 to-background">
+             <div className="container px-4">
+                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+                     <motion.div
+                         initial={{ opacity: 0, x: -20 }}
+                         animate={{ opacity: 1, x: 0 }}
+                         transition={{ duration: 0.8 }}
+                         className="space-y-6"
+                     >
+                         <h1 className="text-4xl md:text-5xl font-bold leading-tight">
+                            Magical Children's Book Publishing
+                         </h1>
+                         <p className="text-lg text-muted-foreground leading-relaxed">
+                            We bring stories for young readers to life. From picture books to young adult novels, we understand the unique requirements of the children's market. Our team helps you with illustration, layout, and age-appropriate editing to captivate the next generation of readers.
+                         </p>
+
+                         <div className="pt-6">
+                             <h2 className="text-2xl font-bold mb-4">Publishing for Kids</h2>
+                             <ul className="space-y-4">
+                                 {[
+                                    "Illustration Services: Partner with talented artists to visualize your story.",
+                                    "Age Targeting: Ensuring content and reading level match your audience.",
+                                    "Durable Printing: High-quality binding for books that will be read again and again.",
+                                    "Global Distribution: Reach schools, libraries, and families worldwide."
+                                 ].map((item, idx) => (
+                                     <li key={idx} className="flex items-start gap-3">
+                                         <div className="mt-1 min-w-[20px] h-[20px] rounded-full bg-primary/10 flex items-center justify-center">
+                                             <Check className="w-4 h-4 text-primary" />
+                                         </div>
+                                         <span className="text-muted-foreground text-sm">
+                                             {item}
+                                         </span>
+                                     </li>
+                                 ))}
+                             </ul>
+                         </div>
+                     </motion.div>
+
+                     <motion.div
+                         initial={{ opacity: 0, x: 20 }}
+                         animate={{ opacity: 1, x: 0 }}
+                         transition={{ duration: 0.8, delay: 0.2 }}
+                         className="bg-card border border-border rounded-2xl p-6 md:p-8 shadow-xl"
+                     >
+                         <div className="mb-6">
+                            <h3 className="text-xl font-bold">Start Your Story Journey!</h3>
+                         </div>
+                         <ContactForm />
+                     </motion.div>
+                 </div>
+             </div>
+        </section>
+
+        {/* Feature Section 1 */}
+        <section className="py-20 bg-background text-center px-4">
+             <div className="container max-w-5xl mx-auto">
+                 <h2 className="text-3xl md:text-4xl font-bold mb-6">Illustrations That Pop</h2>
+                 <p className="text-lg text-muted-foreground leading-relaxed mb-12">
+                    For children's books, the artwork is just as important as the text. We connect you with professional illustrators who can match your vision and style. Whether you want watercolors, digital art, or sketches, we ensure the visuals complement your narrative perfectly.
+                 </p>
+
+                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                     <div className="relative rounded-xl overflow-hidden border border-border bg-muted">
+                         <Image
+                            src="/images/simple/childrens-book-publishers.webp"
+                            alt="Children's Book Publishers"
+                            width={548}
+                            height={325}
+                            className="w-full h-auto object-cover"
+                         />
+                     </div>
+                     <div className="text-left space-y-6">
+                         <h3 className="text-2xl font-bold">Engaging Young Minds</h3>
+                         <p className="text-muted-foreground">
+                            We help you craft stories that educate and entertain. Our editors specialize in children's literature and can help you refine your rhythm, rhyme, and vocabulary. We also advise on themes and trends in the current market.
+                         </p>
+                         <div className="flex flex-col sm:flex-row gap-4 pt-2">
+                             <a
+                                href="/get-free-quote"
+                                className="inline-flex h-12 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90"
+                             >
+                                Publish My Children's Book
+                             </a>
+                             <a
+                                href="tel:(888)909-9431"
+                                className="inline-flex h-12 items-center justify-center rounded-md border border-input bg-background px-8 text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground gap-2"
+                             >
+                                <Phone className="w-4 h-4" />
+                                (888) 909-9431
+                             </a>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+        </section>
+
+        {/* Banner */}
+        <section className="py-16 bg-muted/10 border-y border-border">
+             <div className="container px-4">
+                 <div className="flex flex-col lg:flex-row items-center gap-8 justify-center">
+                     <div className="flex-shrink-0">
+                         <Image
+                            src="/images/simple/satisfaction-guarantee.webp"
+                            alt="Satisfaction Guarantee"
+                            width={280}
+                            height={281}
+                            className="w-48 h-auto mx-auto"
+                         />
+                     </div>
+                     <div className="text-center lg:text-left space-y-4 max-w-2xl">
+                         <span className="text-primary font-bold tracking-wide uppercase text-sm">Inspiring Creativity</span>
+                         <h2 className="text-2xl md:text-3xl font-bold">
+                            We are dedicated to producing books that spark imagination and a lifelong love of reading.
+                         </h2>
+                     </div>
+                 </div>
+             </div>
+        </section>
+
+        {/* Detailed Service List */}
+        <section className="py-20 container px-4 mx-auto">
+             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+                 <div className="space-y-8">
+                     <h2 className="text-3xl md:text-4xl font-bold">Our Children's Publishing Services</h2>
+                     <p className="text-lg text-muted-foreground">
+                        Everything you need to succeed in the kids' market:
+                     </p>
+
+                     <ul className="space-y-6">
+                         {[
+                             { title: "Storyboarding:", desc: "Planning the flow of text and images." },
+                             { title: "Character Design:", desc: "Creating memorable characters kids will love." },
+                             { title: "Typography:", desc: "Selecting fun, readable fonts." },
+                             { title: "Marketing to Parents:", desc: "Strategies to reach the buyers—parents and educators." }
+                         ].map((item, idx) => (
+                             <li key={idx} className="flex gap-4">
+                                 <Circle className="w-3 h-3 mt-2 text-primary fill-current flex-shrink-0" />
+                                 <span className="text-muted-foreground">
+                                     <strong className="text-foreground">{item.title}</strong> {item.desc}
+                                 </span>
+                             </li>
+                         ))}
+                     </ul>
+
+                     <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                         <a
+                            href="/get-free-quote"
+                            className="inline-flex h-12 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90"
+                         >
+                            Start Publishing
+                         </a>
+                         <a
+                            href="tel:(888)909-9431"
+                            className="inline-flex h-12 items-center justify-center rounded-md border border-input bg-background px-8 text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground gap-2"
+                         >
+                            <Phone className="w-4 h-4" />
+                            (888) 909-9431
+                         </a>
+                     </div>
+                 </div>
+
+                 <div className="grid grid-cols-2 gap-4">
+                     <div className="space-y-4">
+                         <Image src="/images/simple/childrens-book-publisher-sample-1.webp" alt="Childrens Book Publisher Sample 1" width={244} height={250} className="w-full h-auto rounded-lg shadow-md hover:shadow-xl transition-shadow border border-border" />
+                         <Image src="/images/simple/childrens-book-publisher-sample-3.webp" alt="Childrens Book Publisher Sample 3" width={244} height={250} className="w-full h-auto rounded-lg shadow-md hover:shadow-xl transition-shadow border border-border" />
+                     </div>
+                     <div className="space-y-4 pt-8">
+                         <Image src="/images/simple/childrens-book-publisher-sample-2.webp" alt="Childrens Book Publisher Sample 2" width={244} height={250} className="w-full h-auto rounded-lg shadow-md hover:shadow-xl transition-shadow border border-border" />
+                         <Image src="/images/simple/childrens-book-publisher-sample-4.webp" alt="Childrens Book Publisher Sample 4" width={244} height={250} className="w-full h-auto rounded-lg shadow-md hover:shadow-xl transition-shadow border border-border" />
+                     </div>
+                     <div className="col-span-2 pt-4">
+                          <Image src="/images/simple/british-book-authors.webp" alt="The Pulp House Publishing" width={301} height={85} className="mx-auto" />
+                     </div>
+                 </div>
+             </div>
+        </section>
+
+        {/* Awards */}
+        <section className="py-20 bg-secondary text-secondary-foreground text-center px-4">
+             <div className="container max-w-4xl mx-auto">
+                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                     <div className="text-left space-y-4">
+                         <span className="font-bold uppercase tracking-wider opacity-80">Trusted by Parents</span>
+                         <h2 className="text-3xl font-bold">Safe and Educational Content</h2>
+                         <p className="opacity-90 leading-relaxed">
+                            We pride ourselves on publishing content that is safe, educational, and fun for children of all ages.
+                         </p>
+                     </div>
+                     <div className="text-center space-y-4">
+                         <div className="flex justify-center gap-4">
+                             <Image src="/images/bg/cmi-awards.webp" alt="CMI Awards" width={100} height={100} className="w-24 h-auto" />
+                             <Image src="/images/bg/ipa-awards.webp" alt="IPA Awards" width={100} height={100} className="w-24 h-auto" />
+                             <Image src="/images/bg/the-business-bank-book-awards.webp" alt="The Business Bank Book Awards" width={100} height={100} className="w-24 h-auto" />
+                         </div>
+                         <p className="text-sm font-medium opacity-80">Award-winning children's books.</p>
+                     </div>
+                 </div>
+             </div>
+        </section>
+
+        {/* Process List */}
+        <section className="py-20 container px-4 mx-auto text-center border-b border-border">
+             <h2 className="text-3xl md:text-4xl font-bold mb-6">Our Publishing Path</h2>
+             <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-10">
+                Bringing your story to the nursery shelf.
+             </p>
+             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto text-left">
+                 {[
+                    "Concept: We review your story and illustration ideas.",
+                    "Editing: We refine the text for the target age group.",
+                    "Illustration: We coordinate with artists to create visuals.",
+                    "Layout: We combine text and art into a cohesive book.",
+                    "Production: We print and distribute your book."
+                 ].map((item, idx) => (
+                     <div key={idx} className="flex gap-3 p-4 bg-muted/20 rounded-lg border border-border/50">
+                         <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                         <span className="text-sm font-medium text-foreground">{item}</span>
+                     </div>
+                 ))}
+             </div>
+        </section>
+
+        {/* Partners */}
+        <section className="py-16 bg-muted/20">
+             <div className="container px-4 text-center">
+                 <h2 className="text-2xl md:text-3xl font-bold mb-4">Our Partners in Education</h2>
+                 <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
+                     <Image src="/images/bg/amazon.svg" alt="Amazon" width={102} height={31} className="h-8 w-auto object-contain" />
+                     <Image src="/images/bg/kindle.svg" alt="Kindle" width={102} height={36} className="h-9 w-auto object-contain" />
+                     <Image src="/images/bg/barnes-and-noble.svg" alt="Barnes and Noble" width={102} height={36} className="h-9 w-auto object-contain" />
+                     <Image src="/images/bg/kobo.svg" alt="Kobo" width={102} height={52} className="h-10 w-auto object-contain" />
+                     <Image src="/images/bg/apple-book.svg" alt="Apple Book" width={120} height={42} className="h-9 w-auto object-contain" />
+                     <Image src="/images/bg/google-play-book.svg" alt="Google Play Books" width={130} height={42} className="h-9 w-auto object-contain" />
+                 </div>
+             </div>
+        </section>
+
+        {/* Testimonials */}
+        <section className="py-20 text-center bg-background">
+            <div className="container px-4">
+                 <span className="inline-block py-1 px-3 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-4">
+                    Happy Families
+                 </span>
+                 <h2 className="text-3xl md:text-4xl font-bold mb-6">What Parents and Kids Say</h2>
+                 <p className="text-lg text-muted-foreground mb-12">
+                    Our books are loved by families everywhere.
+                 </p>
+                 <VideoTestimonialsSection />
+            </div>
+        </section>
+
+      </main>
+      <Footer />
+    </>
+  );
+};
+
+export default ChildrensBookPublishingPage;
