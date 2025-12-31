@@ -77,7 +77,7 @@ export const ContactHeroSection: FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.6 }}
               onSubmit={handleSubmit}
-              className="relative backdrop-blur-xl bg-white/70 dark:bg-gray-900/70 border border-white/20 dark:border-gray-800/50 rounded-3xl p-6 md:p-8 shadow-2xl"
+              className="relative backdrop-blur-xl bg-card/70 border border-border rounded-3xl p-6 md:p-8 shadow-2xl"
             >
               <div className="space-y-6">
                 {/* Name Input */}
@@ -92,7 +92,7 @@ export const ContactHeroSection: FC = () => {
                     name="name"
                     placeholder="Enter your full name"
                     required
-                    className="w-full px-6 py-4 bg-white/80 dark:bg-gray-800/80 border-2 border-border focus:border-primary rounded-xl text-foreground placeholder:text-muted-foreground transition-all duration-300 focus:ring-4 focus:ring-primary/20 group-hover:border-primary/50"
+                    className="w-full px-6 py-4 bg-card/80 border-2 border-border focus:border-primary rounded-xl text-foreground placeholder:text-muted-foreground transition-all duration-300 focus:ring-4 focus:ring-primary/20 group-hover:border-primary/50"
                   />
                 </div>
 
@@ -108,7 +108,7 @@ export const ContactHeroSection: FC = () => {
                     name="email"
                     placeholder="Enter your email address"
                     required
-                    className="w-full px-6 py-4 bg-white/80 dark:bg-gray-800/80 border-2 border-border focus:border-primary rounded-xl text-foreground placeholder:text-muted-foreground transition-all duration-300 focus:ring-4 focus:ring-primary/20 group-hover:border-primary/50"
+                    className="w-full px-6 py-4 bg-card/80 border-2 border-border focus:border-primary rounded-xl text-foreground placeholder:text-muted-foreground transition-all duration-300 focus:ring-4 focus:ring-primary/20 group-hover:border-primary/50"
                   />
                 </div>
 
@@ -124,7 +124,7 @@ export const ContactHeroSection: FC = () => {
                     name="phone"
                     placeholder="Enter your phone number"
                     required
-                    className="w-full px-6 py-4 bg-white/80 dark:bg-gray-800/80 border-2 border-border focus:border-primary rounded-xl text-foreground placeholder:text-muted-foreground transition-all duration-300 focus:ring-4 focus:ring-primary/20 group-hover:border-primary/50"
+                    className="w-full px-6 py-4 bg-card/80 border-2 border-border focus:border-primary rounded-xl text-foreground placeholder:text-muted-foreground transition-all duration-300 focus:ring-4 focus:ring-primary/20 group-hover:border-primary/50"
                   />
                 </div>
 

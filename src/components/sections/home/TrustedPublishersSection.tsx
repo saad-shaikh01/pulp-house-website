@@ -60,7 +60,7 @@ export const TrustedPublishersSection: FC = () => {
             <div className="pt-4">
               <Link
                 href="/get-free-quote"
-                className="bg-primary hover:bg-primary/90 hover:shadow-primary/50 inline-flex items-center rounded-full px-8 py-4 text-lg font-semibold text-white shadow-lg transition-all duration-200 hover:scale-105"
+                className="btn btn-primary dark:btn-primary"
               >
                 Need Publishing Support?
               </Link>

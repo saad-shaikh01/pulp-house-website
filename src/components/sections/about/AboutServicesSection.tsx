@@ -89,7 +89,7 @@ export const AboutServicesSection: FC = () => {
                     <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500`} />
 
                     {/* Card content */}
-                    <div className="relative h-full backdrop-blur-sm bg-white/60 dark:bg-gray-900/60 border border-border group-hover:border-primary/30 rounded-3xl p-8 transition-all duration-500 group-hover:shadow-2xl">
+                    <div className="relative h-full backdrop-blur-sm bg-card/60 border border-border group-hover:border-primary/30 rounded-3xl p-8 transition-all duration-500 group-hover:shadow-2xl">
                       {/* Badge number */}
                       <div className={`absolute top-6 right-6 text-5xl font-black bg-gradient-to-br ${service.gradient} bg-clip-text text-transparent opacity-20 group-hover:opacity-40 transition-opacity`}>
                         {service.number}

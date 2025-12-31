@@ -79,7 +79,7 @@ export const PublishingJourneySection: FC = () => {
             size="lg"
             rounded="full"
             animation="scaleLift"
-            className="border-2 border-primary text-primary"
+            className=""
           />
         </motion.div>
       </div>

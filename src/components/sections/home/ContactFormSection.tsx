@@ -59,11 +59,11 @@ export const ContactFormSection: FC = () => {
         >
           {/* Header */}
           <div className="text-center mb-8">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border border-primary/20 rounded-full text-sm font-semibold text-primary backdrop-blur-sm mb-4">
+            <div className="eye-brow-primary mb-2">
               <Sparkles className="w-4 h-4" />
               Get Started Today
             </div>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold !bg-gradient-to-br !from-primary !via-secondary !to-primary-light !bg-clip-text !text-transparent">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold gradient-text-primary">
               LET'S GET STARTED
             </h2>
           </div>
@@ -118,7 +118,8 @@ export const ContactFormSection: FC = () => {
               disabled={isSubmitting}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="w-full md:w-auto px-12 py-4 bg-gradient-to-r from-primary to-secondary hover:from-secondary hover:to-primary text-white rounded-xl font-bold text-lg transition-all duration-300 shadow-lg hover:shadow-2xl hover:shadow-primary/50 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 mx-auto"
+              // className="w-full md:w-auto px-12 py-4 bg-gradient-to-r from-primary to-secondary hover:from-secondary hover:to-primary text-white rounded-xl font-bold text-lg transition-all duration-300 shadow-lg hover:shadow-2xl hover:shadow-primary/50 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 mx-auto"
+              className="w-full md:w-auto px-12 py-4 btn-primary text-white rounded-xl font-bold text-lg transition-all duration-300 shadow-lg hover:shadow-2xl hover:shadow-primary/50 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 mx-auto"
             >
               {isSubmitting ? (
                 <>

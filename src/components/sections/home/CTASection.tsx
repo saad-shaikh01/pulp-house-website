@@ -93,10 +93,10 @@ const SpotlightCTA: FC<CTASectionProps> = ({
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <PremiumButton variant="glow" icon href={primaryButtonHref}>
+              <PremiumButton variant="glow" icon href={primaryButtonHref} className="btn btn-primary">
                 {primaryButtonText}
               </PremiumButton>
-              <PhoneButton phone={SITE_CONFIG.phone} variant="neon" />
+              {/* <PhoneButton phone={SITE_CONFIG.phone} variant="neon" /> */}
             </div>
           </motion.div>
 

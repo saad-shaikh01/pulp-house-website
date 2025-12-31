@@ -59,7 +59,7 @@ const roadblocks = [
 
 export const RoadblocksSection: FC = () => {
   return (
-    <section className="py-24 md:py-32 bg-gradient-to-b from-background to-primary/5 relative overflow-hidden">
+    <section className="py-5 md:py-16 bg-gradient-to-b from-background to-primary/5 relative overflow-hidden">
       <div className="container px-4">
         {/* Header */}
         <motion.div
@@ -71,11 +71,11 @@ export const RoadblocksSection: FC = () => {
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
             We Understand the<br />Roadblocks on the Way to
           </h2>
-          <div className="text-4xl md:text-5xl lg:text-6xl font-black mb-6">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-primary-light">
-              SELF{" "}
-            </span>
-            <span className="text-foreground">PUBLISHING</span>
+          <div className="text-4xl md:text-5xl lg:text-6xl font-black mb-6 gradient-text-primary">
+            {/* <span className="gradient-text-primary"> */}
+              SELF{" "} PUBLISHING
+            {/* </span> */}
+            {/* <span className="text-foreground"></span> */}
           </div>
           <p className="text-xl text-muted-foreground">Does this sound like you?</p>
         </motion.div>

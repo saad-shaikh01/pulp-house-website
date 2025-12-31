@@ -37,7 +37,7 @@ const buttonVariants = cva(
         // Standard variants
         default: "bg-primary text-primary-foreground hover:opacity-90 shadow-lg hover:shadow-xl",
         secondary: "bg-secondary text-secondary-foreground hover:opacity-90 shadow-lg",
-        outline: "border-2 border-input bg-transparent hover:bg-accent hover:text-accent-foreground",
+        outline: "border-2 dark:bg-white/10 border-[#c938d6] bg-[#fff] !text-[#c938d6] dark:text-white  ",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
 
@@ -52,7 +52,8 @@ const buttonVariants = cva(
 
         // Specialized variants
         phone: "bg-white/10 backdrop-blur-xl border-2 border-white/30 hover:border-white/50 text-white",
-        cta: "bg-primary hover:bg-primary/90 text-white shadow-lg hover:shadow-primary/50",
+        // cta: "bg-primary hover:bg-primary/90 text-white shadow-lg hover:shadow-primary/50",
+        cta: "btn-primary",
       },
 
       size: {
@@ -70,14 +71,17 @@ const buttonVariants = cva(
         lg: "rounded-lg",
         xl: "rounded-xl",
         "2xl": "rounded-2xl",
-        full: "rounded-full",
+        full: "rounded-[12px]",
       },
 
       animation: {
         none: "",
-        scale: "hover:scale-105 active:scale-95",
-        lift: "hover:-translate-y-1 active:translate-y-0",
-        scaleLift: "hover:scale-105 hover:-translate-y-1 active:scale-95 active:translate-y-0",
+        scale: "",
+        lift: "",
+        scaleLift: "",
+        // scale: "hover:scale-105 active:scale-95",
+        // lift: "hover:-translate-y-1 active:translate-y-0",
+        // scaleLift: "hover:scale-105 hover:-translate-y-1 active:scale-95 active:translate-y-0",
       },
     },
     defaultVariants: {
@@ -161,7 +165,7 @@ const ButtonV2 = React.forwardRef<HTMLButtonElement, ButtonV2Props>(
 
     const baseClassName = cn(
       buttonVariants({ variant, size, rounded, animation }),
-      "group",
+      "group btn",
       className
     );
 

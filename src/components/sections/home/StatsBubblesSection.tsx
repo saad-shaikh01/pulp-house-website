@@ -31,12 +31,12 @@ export const StatsBubblesSection: FC = () => {
             transition={{ duration: 0.6 }}
             className="lg:col-span-5 space-y-6"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border border-primary/20 rounded-full text-sm font-semibold text-primary backdrop-blur-sm">
+            <div className="eye-brow-primary">
               <Sparkles className="w-4 h-4" />
               At a Quick Glance
             </div>
 
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold !bg-gradient-to-br !from-primary !via-secondary !to-primary-light !bg-clip-text !text-transparent leading-tight">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-accent dark:text-foreground leading-tight">
                The Pulp House Publishing at a Quick Glance
             </h2>
 
@@ -47,14 +47,13 @@ export const StatsBubblesSection: FC = () => {
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Link
                 href="/get-free-quote"
-                className="group relative px-8 py-4 bg-gradient-to-r from-primary to-secondary text-white rounded-full text-lg font-semibold overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-primary/50"
+                className="btn btn-primary"
               >
-                <span className="relative z-10">Get In Touch</span>
-                <div className="absolute inset-0 bg-gradient-to-r from-secondary to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                Get In Touch
               </Link>
               <a
                 href="tel:888-909-9431"
-                className="group px-8 py-4 bg-white dark:bg-gray-800 border-2 border-primary/30 hover:border-primary text-foreground rounded-full text-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-xl"
+                className="btn btn-outline"
               >
                 888-909-9431
               </a>
@@ -175,7 +174,7 @@ export const StatsBubblesSection: FC = () => {
               </motion.div>
             </motion.div>
 
-            {/* Decorative floating elements */}
+            {/* Decorative floating elements
             <motion.div
               animate={{ rotate: 360 }}
               transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
@@ -185,7 +184,7 @@ export const StatsBubblesSection: FC = () => {
               animate={{ rotate: -360 }}
               transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
               className="absolute bottom-32 right-24 w-12 h-12 border-2 border-secondary/30 rounded-full"
-            />
+            /> */}
           </div>
         </div>
       </div>

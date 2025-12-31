@@ -155,7 +155,7 @@ export const AboutAchievementsSection: FC = () => {
                 transition={{ delay: 0.5 }}
                 className="absolute -bottom-8 -left-8 right-8 md:-left-12 md:right-12"
               >
-                <div className="backdrop-blur-xl bg-white/90 dark:bg-gray-900/90 rounded-2xl p-4 md:p-6 shadow-2xl border border-white/20 dark:border-gray-800/50">
+                <div className="backdrop-blur-xl bg-card/90 rounded-2xl p-4 md:p-6 shadow-2xl border border-border">
                   <div className="grid grid-cols-3 gap-4 md:gap-6">
                     {stats.map((stat, index) => {
                       const Icon = stat.icon;

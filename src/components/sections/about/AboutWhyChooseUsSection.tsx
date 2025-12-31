@@ -36,7 +36,7 @@ export const AboutWhyChooseUsSection: FC = () => {
   return (
     <section className="relative py-20 md:py-32 overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-950 via-primary/20 to-gray-950" />
+      <div className="absolute inset-0 bg-gradient-to-br from-background via-primary/20 to-background" />
 
       {/* Animated gradient orbs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -61,19 +61,19 @@ export const AboutWhyChooseUsSection: FC = () => {
           className="text-center max-w-3xl mx-auto mb-16"
         >
           {/* Eyebrow */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 border border-white/20 rounded-full mb-4">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border border-primary/20 rounded-full mb-4">
             <Sparkles className="w-4 h-4 text-secondary" />
-            <span className="text-sm font-semibold text-white/80">Why Authors Choose Us</span>
+            <span className="text-sm font-semibold text-muted-foreground">Why Authors Choose Us</span>
           </div>
 
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
             Why Authors{" "}
             <span className="bg-gradient-to-r from-secondary to-primary bg-clip-text text-transparent">
               Choose Us
             </span>
           </h2>
 
-          <p className="text-lg text-white/70 leading-relaxed">
+          <p className="text-lg text-muted-foreground leading-relaxed">
             We know how difficult it is to be a self-published author: difficult platforms, hidden expenses,
             inconsistent quality, and no guidance. That is why we provide individual assistance.
           </p>
@@ -93,9 +93,9 @@ export const AboutWhyChooseUsSection: FC = () => {
               <div
                 className={`relative h-full rounded-3xl overflow-hidden ${
                   card.variant === "dark"
-                    ? "bg-gray-900/80"
-                    : "bg-white/10 backdrop-blur-sm"
-                } border border-white/10 hover:border-secondary/50 transition-all duration-500 hover:shadow-2xl hover:shadow-secondary/20`}
+                    ? "bg-card/80"
+                    : "bg-card/10 backdrop-blur-sm"
+                } border border-border hover:border-secondary/50 transition-all duration-500 hover:shadow-2xl hover:shadow-secondary/20`}
               >
                 {/* Image */}
                 <div className="relative h-48 md:h-56 overflow-hidden">
@@ -108,8 +108,8 @@ export const AboutWhyChooseUsSection: FC = () => {
                   {/* Overlay */}
                   <div className={`absolute inset-0 ${
                     card.variant === "dark"
-                      ? "bg-gradient-to-t from-gray-900 via-gray-900/50 to-transparent"
-                      : "bg-gradient-to-t from-black/80 via-black/30 to-transparent"
+                      ? "bg-gradient-to-t from-background via-background/50 to-transparent"
+                      : "bg-gradient-to-t from-background/80 via-background/30 to-transparent"
                   }`} />
 
                   {/* Floating number */}
@@ -126,10 +126,10 @@ export const AboutWhyChooseUsSection: FC = () => {
 
                 {/* Content */}
                 <div className="p-6 md:p-8">
-                  <h3 className="text-xl md:text-2xl font-bold text-white mb-3 group-hover:text-secondary transition-colors">
+                  <h3 className="text-xl md:text-2xl font-bold text-foreground mb-3 group-hover:text-secondary transition-colors">
                     {card.title}
                   </h3>
-                  <p className="text-white/70 leading-relaxed">
+                  <p className="text-muted-foreground leading-relaxed">
                     {card.description}
                   </p>
                 </div>

@@ -42,7 +42,7 @@ export const AboutJourneySection: FC = () => {
 
       <div className="container px-4 relative z-10">
         {/* Main Journey Content */}
-        <div className="relative backdrop-blur-sm bg-white/50 dark:bg-gray-900/50 rounded-[2.5rem] border border-white/20 dark:border-gray-800/50 shadow-2xl overflow-hidden">
+        <div className="relative backdrop-blur-sm bg-card/50 rounded-[2.5rem] border border-border shadow-2xl overflow-hidden">
           {/* Inner gradient glow */}
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-2/3 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
 

@@ -64,7 +64,7 @@ export const ContactResultsSection: FC = () => {
                 className="group relative"
               >
                 {/* Card */}
-                <div className="relative h-full backdrop-blur-xl bg-white/70 dark:bg-gray-900/70 border border-white/20 dark:border-gray-800/50 rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                <div className="relative h-full backdrop-blur-xl bg-card/70 border border-border rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
                   {/* Icon */}
                   <div className="mb-6 relative">
                     <div className={`inline-flex p-4 rounded-2xl bg-gradient-to-br ${result.gradient} shadow-lg`}>

@@ -33,7 +33,7 @@ export const AboutWhoWeAreSection: FC = () => {
   return (
     <section id="who-we-are" className="relative py-20 md:py-32 overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-50 to-white dark:from-gray-950 dark:to-gray-900" />
+      <div className="absolute inset-0 bg-gradient-to-br from-background to-background" />
 
       {/* Animated mesh gradient */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -159,7 +159,7 @@ export const AboutWhoWeAreSection: FC = () => {
                   whileHover={{ x: 10 }}
                   className="group"
                 >
-                  <div className="flex items-start gap-6 p-6 rounded-2xl bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm border border-border hover:border-primary/50 hover:shadow-xl transition-all duration-300">
+                  <div className="flex items-start gap-6 p-6 rounded-2xl bg-card/50 backdrop-blur-sm border border-border hover:border-primary/50 hover:shadow-xl transition-all duration-300">
                     {/* Number/Icon */}
                     <div className="relative flex-shrink-0">
                       {/* Glow effect */}
