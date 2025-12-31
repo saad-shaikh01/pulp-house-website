@@ -1,278 +1,851 @@
 "use client";
 
-import { FC } from "react";
-import { Header } from "@/components/layout/Header";
-import { Footer } from "@/components/layout/Footer";
+import { FC, useRef } from "react";
+import { motion, useInView } from "framer-motion";
+import Image from "next/image";
+import Link from "next/link";
+import {
+  Check,
+  Phone,
+  Palette,
+  BookOpen,
+  Users,
+  Map,
+  Sparkles,
+  Megaphone,
+  Star,
+  Pen,
+  X,
+} from "lucide-react";
+import { Heading, H1, H2, H3 } from "@/components/ui/heading";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { ContactForm } from "@/components/forms/ContactForm";
 import { VideoTestimonialsSection } from "@/components/sections/home/VideoTestimonialsSection";
-import Image from "next/image";
-import { motion } from "framer-motion";
-import { Check, Phone, Circle } from "lucide-react";
+
+// Animation variants
+const fadeInUp = {
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+};
+
+const fadeInLeft = {
+  hidden: { opacity: 0, x: -40 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: "easeOut" } },
+};
+
+const fadeInRight = {
+  hidden: { opacity: 0, x: 40 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: "easeOut" } },
+};
+
+const staggerContainer = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.1, delayChildren: 0.2 },
+  },
+};
+
+const staggerItem = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.4 } },
+};
+
+// Animated Section Wrapper
+const AnimatedSection: FC<{
+  children: React.ReactNode;
+  className?: string;
+}> = ({ children, className }) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+
+  return (
+    <motion.section
+      ref={ref}
+      initial="hidden"
+      animate={isInView ? "visible" : "hidden"}
+      variants={fadeInUp}
+      className={className}
+    >
+      {children}
+    </motion.section>
+  );
+};
+
+// Service data
+const services = [
+  {
+    icon: BookOpen,
+    title: "Book Cover Illustrations",
+    description:
+      "Custom artwork for book covers that instantly communicate genre and story tone.",
+  },
+  {
+    icon: Sparkles,
+    title: "Inside-the-Book Illustrations",
+    description:
+      "Scene-by-scene visuals that depict key moments or emotional highlights.",
+  },
+  {
+    icon: Users,
+    title: "Character Illustrations",
+    description:
+      "Detailed artwork showing each character's look, personality, and evolution.",
+  },
+  {
+    icon: Map,
+    title: "World Maps & Setting Illustrations",
+    description: "Fantasy maps, city layouts, magical realms, and visual guides.",
+  },
+  {
+    icon: Palette,
+    title: "Storyline & World-Building Visuals",
+    description:
+      "Illustrations of creatures, artifacts, symbols, cultures, and environments.",
+  },
+  {
+    icon: Megaphone,
+    title: "Promotional Artwork",
+    description:
+      "Graphics for social media posts, book trailers, posters, and ads.",
+  },
+];
+
+const audienceItems = [
+  "Indie authors needing custom book cover art",
+  "Fantasy and sci-fi writers who need maps and world-building visuals",
+  "Romance and YA authors wanting stylized character artwork",
+  "Children's book authors needing illustrated scenes",
+  "Authors building a large universe and visual identity",
+  "Writers preparing promotional campaigns for book launches",
+];
+
+const processSteps = [
+  {
+    number: "1",
+    title: "Creative Discovery",
+    description:
+      "We discuss your story, art style, characters, and visual atmosphere.",
+  },
+  {
+    number: "2",
+    title: "Concept Sketches",
+    description:
+      "We create rough drafts, thumbnails, and layout ideas based on your vision.",
+  },
+  {
+    number: "3",
+    title: "Detailed Illustration Phase",
+    description:
+      "Our illustrators produce polished, full-color artwork with textures, lighting, and emotion.",
+  },
+  {
+    number: "4",
+    title: "Final Delivery",
+    description:
+      "You receive high-resolution print-ready and digital files for cover art, interior pages, and marketing use.",
+  },
+];
+
+const illustrationTypes = [
+  { icon: BookOpen, label: "Cover Art" },
+  { icon: Sparkles, label: "Interior Scene Illustrations" },
+  { icon: Users, label: "Character Profiles" },
+  { icon: Map, label: "Maps & World-Building Guides" },
+  { icon: Megaphone, label: "Promotional Artwork" },
+  { icon: Palette, label: "Story Objects & Artifacts" },
+];
+
+const whyChooseUs = [
+  {
+    icon: Palette,
+    title: "Genre-Specific Artists",
+    description:
+      "Skilled in fantasy, sci-fi, children's books, YA, romance & more.",
+  },
+  {
+    icon: BookOpen,
+    title: "Story-Driven Art",
+    description: "Every illustration captures your plot, world, and characters.",
+  },
+  {
+    icon: Star,
+    title: "Professional Quality",
+    description:
+      "High-resolution files formatted for print, digital books & marketing.",
+  },
+  {
+    icon: Pen,
+    title: "Author-First Collaboration",
+    description:
+      "We refine the artwork until it aligns with your creative vision.",
+  },
+];
+
+const comparisons = [
+  {
+    competitor: "Freelancers",
+    competitorPoints: [
+      "Skill varies dramatically",
+      "Often limited understanding of genre",
+      "Inconsistent art style",
+      "No structured feedback cycles",
+      "May delay revisions",
+    ],
+    ourPoints: [
+      "Genre-specialized illustrators",
+      "Cohesive art style for entire books",
+      "Market-aware and story-driven artwork",
+      "Fast turnaround time",
+      "Clear revision process",
+    ],
+  },
+  {
+    competitor: "AI Tools",
+    competitorPoints: [
+      "Cannot understand story emotion",
+      "Inconsistent styles and anatomy errors",
+      "Copyright uncertainty/considered art theft",
+      "Low-res outputs unsuitable for print",
+    ],
+    ourPoints: [
+      "100% human-created illustrations",
+      "Consistent style for all characters",
+      "Full rights and confidential art files",
+      "High-res files suitable for print",
+    ],
+  },
+  {
+    competitor: "Agencies",
+    competitorPoints: [
+      "Often template-based artwork",
+      "Slow workflow and limited customization",
+      "Little author involvement",
+      "High overhead costs and hidden charges",
+    ],
+    ourPoints: [
+      "Fully custom illustrations",
+      "Direct collaboration with illustrators",
+      "Tailored art direction for your genre",
+      "100% transparent pricing",
+    ],
+  },
+];
+
+const faqs = [
+  {
+    question: "What styles do you illustrate in?",
+    answer:
+      "We offer realism, semi-realism, cartoon, fantasy, dark art, watercolor, line art, and more.",
+  },
+  {
+    question: "Do you provide illustrations for both eBooks and print?",
+    answer:
+      "Yes, all artwork comes in high-resolution formats suitable for KDP, IngramSpark, and traditional printing.",
+  },
+  {
+    question: "Can I request revisions?",
+    answer:
+      "Absolutely. We offer multiple revision rounds to ensure the artwork reflects your vision.",
+  },
+  {
+    question: "Can you illustrate an entire book series?",
+    answer:
+      "Yes, we can create cohesive art styles for series branding, maps, characters, and promotional visuals.",
+  },
+];
 
 const BookIllustrationPage: FC = () => {
   return (
     <>
-      <Header />
-      <main className="min-h-screen bg-background relative z-40">
+      {/* Hero Section */}
+      <section className="relative min-h-[90vh] flex items-center overflow-hidden">
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-primary/5" />
+        <div className="hero-shape shape-1" />
+        <div className="hero-shape shape-2" />
+        <div className="hero-shape shape-3" />
+        <div className="hero-overlay-gradient" />
 
-        {/* Hero Section */}
-        <section className="py-20 md:py-28 bg-gradient-to-b from-primary/10 to-background">
-             <div className="container px-4">
-                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
-                     <motion.div
-                         initial={{ opacity: 0, x: -20 }}
-                         animate={{ opacity: 1, x: 0 }}
-                         transition={{ duration: 0.8 }}
-                         className="space-y-6"
-                     >
-                         <h1 className="text-4xl md:text-5xl font-bold leading-tight">
-                            Give Your Book a Visual Edge with Our Art
-                         </h1>
-                         <p className="text-lg text-muted-foreground leading-relaxed">
-                            We’re a USA-based crew dedicated to helping American writers turn their stories into something special with bold, hand-crafted book illustrations. Our artists create images that pull readers in and make your words hit harder. Whether you’re working on a kids’ book, a graphic novel, or a serious novel, our Book Illustration Services are built to make your project pop in the crowded U.S. publishing scene. We focus on quality and originality, ensuring every picture feels like it belongs to your story.
-                         </p>
+        <div className="container relative z-10 px-4 py-20 md:py-28">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="space-y-6"
+            >
+              <span className="eyebrow">Custom Book Illustration Services</span>
 
-                         <div className="pt-6">
-                             <h2 className="text-2xl font-bold mb-4">How We Build Your Book’s Art</h2>
-                             <p className="text-muted-foreground mb-4">Our book illustration company teams up with USA authors to make their ideas real. We dig into your story, readers, and style to get it right. Here’s how we do it:</p>
-                             <ul className="space-y-4">
-                                 {[
-                                    "First Chat: We talk about your book’s goals, genre, and look.",
-                                    "Rough Sketches: Our illustrators draw early ideas to match your story’s feel.",
-                                    "Full Artwork: We create top-notch illustrations, digital or hand-drawn.",
-                                    "Your Input: We adjust the art based on your thoughts to nail it."
-                                 ].map((item, idx) => (
-                                     <li key={idx} className="flex items-start gap-3">
-                                         <div className="mt-1 min-w-[20px] h-[20px] rounded-full bg-primary/10 flex items-center justify-center">
-                                             <Check className="w-4 h-4 text-primary" />
-                                         </div>
-                                         <span className="text-muted-foreground text-sm">
-                                             {item}
-                                         </span>
-                                     </li>
-                                 ))}
-                             </ul>
-                         </div>
-                     </motion.div>
+              <H1 size="h1Sm" className="!leading-tight">
+                Why Settle for Templates When You Can Get{" "}
+                <span className="gradient-text-primary">Custom Artwork</span> for
+                Your Book?
+              </H1>
 
-                     <motion.div
-                         initial={{ opacity: 0, x: 20 }}
-                         animate={{ opacity: 1, x: 0 }}
-                         transition={{ duration: 0.8, delay: 0.2 }}
-                         className="bg-card border border-border rounded-2xl p-6 md:p-8 shadow-xl"
-                     >
-                         <div className="mb-6">
-                            <h3 className="text-xl font-bold">Begin With Your Book Illustration!</h3>
-                         </div>
-                         <ContactForm />
-                     </motion.div>
-                 </div>
-             </div>
-        </section>
+              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-xl">
+                Let Us Bring Your World, Characters, and Storylines to Life
+                Through Art! We create custom illustrations tailored to your
+                book's genre, mood, and narrative. Get everything from book cover
+                art to character scenes, fantasy maps, and promotional graphics.
+              </p>
 
-        {/* Feature Section 1 */}
-        <section className="py-20 bg-background text-center px-4">
-             <div className="container max-w-5xl mx-auto">
-                 <h2 className="text-3xl md:text-4xl font-bold mb-6">Why Pictures Make Your Story Better</h2>
-                 <p className="text-lg text-muted-foreground leading-relaxed mb-12">
-                    Good illustrations don’t just dress up a book; they bring it to life. For authors in the USA, our custom book illustrations set the mood, stir up feelings, and keep readers hooked. From bright, fun art for children’s stories to detailed drawings for teen novels, our book illustrators shape images that feel like part of your narrative, turning every page into something readers won’t forget.
-                 </p>
+              <div className="flex flex-wrap gap-4 pt-4">
+                <Link href="/get-free-quote" className="btn btn-primary btn-lg">
+                  Generate Illustrations for My Book
+                </Link>
+                <a
+                  href="tel:888-909-9431"
+                  className="btn btn-outline-primary btn-lg btn-icon"
+                >
+                  <Phone className="w-5 h-5" />
+                  888-909-9431
+                </a>
+              </div>
+            </motion.div>
 
-                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                     <div className="relative rounded-xl overflow-hidden border border-border bg-muted">
-                         <Image
-                            src="/images/simple/professional-book-illustrators.webp"
-                            alt="Professional Book Illustrators"
-                            width={548}
-                            height={325}
-                            className="w-full h-auto object-cover"
-                         />
-                     </div>
-                     <div className="text-left space-y-6">
-                         <h3 className="text-2xl font-bold">Art Services for Every American Writer</h3>
-                         <p className="text-muted-foreground">
-                            Whether you’re just starting out or you’ve got a shelf full of books, our Book Illustration Services are made for you. As a USA-based team, we work only with American authors, so our art fits right into the U.S. publishing world. We cover kids’ book art, cover designs, graphic novel drawings, and more, all crafted to make your book impossible to miss.
-                         </p>
-                         <div className="flex flex-col sm:flex-row gap-4 pt-2">
-                             <a
-                                href="/get-free-quote"
-                                className="inline-flex h-12 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90"
-                             >
-                                Illustrate My Book
-                             </a>
-                             <a
-                                href="tel:(888)909-9431"
-                                className="inline-flex h-12 items-center justify-center rounded-md border border-input bg-background px-8 text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground gap-2"
-                             >
-                                <Phone className="w-4 h-4" />
-                                (888) 909-9431
-                             </a>
-                         </div>
-                     </div>
-                 </div>
-             </div>
-        </section>
+            <motion.div
+              initial={{ opacity: 0, x: 50, scale: 0.95 }}
+              animate={{ opacity: 1, x: 0, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+              className="relative"
+            >
+              <div className="glass-card rounded-3xl p-8 md:p-10 shadow-2xl">
+                <div className="mb-6">
+                  <H3 size="h4Sm">Start Your Illustration Project</H3>
+                  <p className="text-muted-foreground mt-2">
+                    Get a free consultation today
+                  </p>
+                </div>
+                <ContactForm />
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
 
-        {/* Banner */}
-        <section className="py-16 bg-muted/10 border-y border-border">
-             <div className="container px-4">
-                 <div className="flex flex-col lg:flex-row items-center gap-8 justify-center">
-                     <div className="flex-shrink-0">
-                         <Image
-                            src="/images/simple/satisfaction-guarantee.webp"
-                            alt="Satisfaction Guarantee"
-                            width={280}
-                            height={281}
-                            className="w-48 h-auto mx-auto"
-                         />
-                     </div>
-                     <div className="text-center lg:text-left space-y-4 max-w-2xl">
-                         <span className="text-primary font-bold tracking-wide uppercase text-sm">Revenue Sharing? Not Anymore!</span>
-                         <h2 className="text-2xl md:text-3xl font-bold">
-                            Get in touch today to talk about your project and see how our Book Illustration Services can turn your book into a hit.
-                         </h2>
-                     </div>
-                 </div>
-             </div>
-        </section>
+      {/* Problem / Solution Section */}
+      <AnimatedSection className="py-20 md:py-28 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-muted/30 via-transparent to-transparent" />
+        <div className="container relative z-10 px-4">
+          <div className="text-center mb-12">
+            <H2 size="h2Sm" align="center">
+              Problem and Solution Breakdown
+            </H2>
+          </div>
 
-        {/* Detailed Service List */}
-        <section className="py-20 container px-4 mx-auto">
-             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
-                 <div className="space-y-8">
-                     <h2 className="text-3xl md:text-4xl font-bold">Bright, Fun Art for Kids’ Books</h2>
-                     <p className="text-lg text-muted-foreground">
-                        Kids’ books need lively, imaginative pictures to grab young readers. Our book illustrators are great at creating colorful, engaging art that brings characters and stories to life. Our children’s Book Illustration Services offer:
-                     </p>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {/* Problem Card */}
+            <motion.div
+              variants={fadeInLeft}
+              className="group relative"
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-destructive/20 to-destructive/5 rounded-3xl blur-xl group-hover:blur-2xl transition-all" />
+              <div className="relative glass-card rounded-3xl p-8 md:p-10 border-destructive/20 h-full">
+                <div className="w-16 h-16 rounded-2xl bg-destructive/10 flex items-center justify-center mb-6">
+                  <X className="w-8 h-8 text-destructive" />
+                </div>
+                <H3 size="h4Sm" className="mb-4">
+                  You've Got Impactful Words but No Visuals to Support Them?
+                </H3>
+                <p className="text-muted-foreground leading-relaxed">
+                  Many indie authors struggle with generic covers, flat character
+                  art, or inconsistent scene illustrations. Without compelling
+                  visuals, your story may fail to capture the imagination of your
+                  ideal reader.
+                </p>
+              </div>
+            </motion.div>
 
-                     <ul className="space-y-6">
-                         {[
-                             { title: "Characters Kids Love:", desc: "We draw figures that stick in kids’ minds and hearts." },
-                             { title: "Pictures That Tell the Story:", desc: "Each image moves your tale forward smoothly." },
-                             { title: "Right for Their Age:", desc: "Art is shaped for the kids you’re writing for." },
-                             { title: "Fun and Engaging:", desc: "We make images that get kids thinking and playing." },
-                             { title: "Same Style All Through:", desc: "We keep the look steady for a polished book." },
-                             { title: "Ready for Publishing:", desc: "Pictures are set for print or digital formats." }
-                         ].map((item, idx) => (
-                             <li key={idx} className="flex gap-4">
-                                 <Circle className="w-3 h-3 mt-2 text-primary fill-current flex-shrink-0" />
-                                 <span className="text-muted-foreground">
-                                     <strong className="text-foreground">{item.title}</strong> {item.desc}
-                                 </span>
-                             </li>
-                         ))}
-                     </ul>
+            {/* Solution Card */}
+            <motion.div
+              variants={fadeInRight}
+              className="group relative"
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/10 rounded-3xl blur-xl group-hover:blur-2xl transition-all" />
+              <div className="relative glass-card rounded-3xl p-8 md:p-10 border-primary/20 h-full">
+                <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
+                  <Check className="w-8 h-8 text-primary" />
+                </div>
+                <H3 size="h4Sm" className="mb-4">
+                  We Provide Visuals That Match Your Impactful Story!
+                </H3>
+                <p className="text-muted-foreground leading-relaxed">
+                  Our illustration services provide story-driven artwork that
+                  enhances your narrative. From maps to characters and
+                  promotional art, our illustrators bring your vision to life
+                  professionally.
+                </p>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </AnimatedSection>
 
-                     <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                         <a
-                            href="/get-free-quote"
-                            className="inline-flex h-12 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90"
-                         >
-                            Begin Your Book Illustration
-                         </a>
-                         <a
-                            href="tel:(888)909-9431"
-                            className="inline-flex h-12 items-center justify-center rounded-md border border-input bg-background px-8 text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground gap-2"
-                         >
-                            <Phone className="w-4 h-4" />
-                            (888) 909-9431
-                         </a>
-                     </div>
-                 </div>
-
-                 <div className="grid grid-cols-2 gap-4">
-                     <div className="space-y-4">
-                         <Image src="/images/simple/book-illustration-sample-1.webp" alt="Book Illustration Sample 1" width={244} height={250} className="w-full h-auto rounded-lg shadow-md hover:shadow-xl transition-shadow border border-border" />
-                         <Image src="/images/simple/book-illustration-sample-3.webp" alt="Book Illustration Sample 3" width={244} height={250} className="w-full h-auto rounded-lg shadow-md hover:shadow-xl transition-shadow border border-border" />
-                     </div>
-                     <div className="space-y-4 pt-8">
-                         <Image src="/images/simple/book-illustration-sample-2.webp" alt="Book Illustration Sample 2" width={244} height={250} className="w-full h-auto rounded-lg shadow-md hover:shadow-xl transition-shadow border border-border" />
-                         <Image src="/images/simple/book-illustration-sample-4.webp" alt="Book Illustration Sample 4" width={244} height={250} className="w-full h-auto rounded-lg shadow-md hover:shadow-xl transition-shadow border border-border" />
-                     </div>
-                     <div className="col-span-2 pt-4">
-                          <Image src="/images/simple/british-book-authors.webp" alt="The Pulp House Publishing" width={301} height={85} className="mx-auto" />
-                     </div>
-                 </div>
-             </div>
-        </section>
-
-        {/* Awards */}
-        <section className="py-20 bg-secondary text-secondary-foreground text-center px-4">
-             <div className="container max-w-4xl mx-auto">
-                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                     <div className="text-left space-y-4">
-                         <span className="font-bold uppercase tracking-wider opacity-80">Break Your Sales Records!</span>
-                         <h2 className="text-3xl font-bold">Great Art Without the Crazy Price Tag</h2>
-                         <p className="opacity-90 leading-relaxed">
-                            We think every author should get awesome book illustrations without emptying their wallet. Our Book Illustration Services are priced to fit different budgets while keeping the quality high. As a USA-based crew, we keep pricing clear and offer packages that work for your project, so you get real bang for your buck.
-                         </p>
-                     </div>
-                     <div className="text-center space-y-4">
-                         <div className="flex justify-center gap-4">
-                             <Image src="/images/cmi-awards.webp" alt="CMI Awards" width={100} height={100} className="w-24 h-auto" />
-                             <Image src="/images/ipa-awards.webp" alt="IPA Awards" width={100} height={100} className="w-24 h-auto" />
-                             <Image src="/images/the-business-bank-book-awards.webp" alt="The Business Bank Book Awards" width={100} height={100} className="w-24 h-auto" />
-                         </div>
-                         <p className="text-sm font-medium opacity-80">We’ve been the award-winning agency in Wales for straight 5 years.</p>
-                     </div>
-                 </div>
-             </div>
-        </section>
-
-        {/* Process List */}
-        <section className="py-20 container px-4 mx-auto text-center border-b border-border">
-             <h2 className="text-3xl md:text-4xl font-bold mb-6">What Makes Our Artists Different</h2>
-             <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-10">
-                Great book illustrators can take your book from solid to unforgettable.
-             </p>
-             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto text-left">
-                 {[
-                    "All Kinds of Looks: From gentle watercolors to sharp digital designs, we’ve got every style covered.",
-                    "Know the U.S. Scene: We get how American publishing works and make art that fits.",
-                    "Made Just for You: Every picture is built to match your story’s voice and readers.",
-                    "No Detail Missed: We sweat the small stuff to keep things clean and pro.",
-                    "On Time, Every Time: We hit your deadlines with work that’s top-notch.",
-                    "Love for Stories: Our artists care about making your book’s story stronger."
-                 ].map((item, idx) => (
-                     <div key={idx} className="flex gap-3 p-4 bg-muted/20 rounded-lg border border-border/50">
-                         <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                         <span className="text-sm font-medium text-foreground">{item}</span>
-                     </div>
-                 ))}
-             </div>
-        </section>
-
-        {/* Partners */}
-        <section className="py-16 bg-muted/20">
-             <div className="container px-4 text-center">
-                 <h2 className="text-2xl md:text-3xl font-bold mb-4">Ready to make your book look as good as it reads?</h2>
-                 <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
-                     <Image src="/images/amazon.svg" alt="Amazon" width={102} height={31} className="h-8 w-auto object-contain" />
-                     <Image src="/images/kindle.svg" alt="Kindle" width={102} height={36} className="h-9 w-auto object-contain" />
-                     <Image src="/images/barnes-and-noble.svg" alt="Barnes and Noble" width={102} height={36} className="h-9 w-auto object-contain" />
-                     <Image src="/images/kobo.svg" alt="Kobo" width={102} height={52} className="h-10 w-auto object-contain" />
-                     <Image src="/images/apple-book.svg" alt="Apple Book" width={120} height={42} className="h-9 w-auto object-contain" />
-                     <Image src="/images/google-play-book.svg" alt="Google Play Books" width={130} height={42} className="h-9 w-auto object-contain" />
-                 </div>
-             </div>
-        </section>
-
-        {/* Testimonials */}
-        <section className="py-20 text-center bg-background">
-            <div className="container px-4">
-                 <span className="inline-block py-1 px-3 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-4">
-                    Clients Sharing Their Experiences
-                 </span>
-                 <h2 className="text-3xl md:text-4xl font-bold mb-6">Our Book Illustrations Are Shining With 5 Star Reviews In USA</h2>
-                 <p className="text-lg text-muted-foreground mb-12">
-                    Our dedication is reflected in the words of our clients. Dig to unfold what the fuss is all about.
-                 </p>
-                 <VideoTestimonialsSection />
+      {/* CTA Banner 1 */}
+      <AnimatedSection className="py-16 md:py-20 bg-gradient-to-r from-primary via-secondary to-primary bg-[length:200%_100%] animate-background-shine">
+        <div className="container px-4">
+          <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
+            <div className="flex-1 text-center lg:text-left">
+              <H2 size="h3Sm" className="text-white mb-4">
+                Your Trusted Partner for Creating Illustrations That Let Readers
+                See, Feel, and Live Your Story.
+              </H2>
+              <p className="text-white/80 text-lg mb-6">
+                Fantasy realms, magical cities, detailed characters and hidden
+                corners, fully realized in book artwork.
+              </p>
+              <div className="flex flex-wrap justify-center lg:justify-start gap-4">
+                <Link href="/get-free-quote" className="btn btn-white btn-lg">
+                  Get in Touch
+                </Link>
+                <a href="tel:888-909-9431" className="btn btn-outline-primary btn-lg !border-white !text-white hover:!bg-white/10">
+                  888-909-9431
+                </a>
+              </div>
             </div>
-        </section>
+            <div className="flex-shrink-0 hidden lg:block">
+              <div className="w-64 h-64 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center">
+                <Palette className="w-24 h-24 text-white/80" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </AnimatedSection>
 
-      </main>
-      <Footer />
+      {/* Service Includes */}
+      <AnimatedSection className="py-20 md:py-28">
+        <div className="container px-4">
+          <div className="text-center mb-16">
+            <H2 size="h2Sm" align="center" className="mb-4">
+              What Our Book Illustration Service Includes
+            </H2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Book illustration is more than just images. It's a storytelling
+              tool. Our professional art for novels and books helps readers
+              visualize your world the way you intended.
+            </p>
+          </div>
+
+          <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          >
+            {services.map((service, idx) => (
+              <motion.div
+                key={idx}
+                variants={staggerItem}
+                className="group relative"
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl" />
+                <div className="relative glass-card rounded-2xl p-6 md:p-8 h-full hover:border-primary/30 transition-all duration-300 hover:-translate-y-1">
+                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary/20 to-secondary/10 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
+                    <service.icon className="w-7 h-7 text-primary" />
+                  </div>
+                  <H3 size="h4Sm" className="mb-3">
+                    {service.title}
+                  </H3>
+                  <p className="text-muted-foreground">{service.description}</p>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </AnimatedSection>
+
+      {/* Who This Is For */}
+      <AnimatedSection className="py-20 md:py-28 bg-muted/30">
+        <div className="container px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            <div className="space-y-6">
+              <H2 size="h2Sm">Who Our Book Illustration Services Are For</H2>
+              <p className="text-lg text-muted-foreground">
+                We collaborate with authors across genres to build visual
+                identities for their stories.
+              </p>
+              <Link href="/get-free-quote" className="btn btn-primary">
+                Connect with an Illustrator
+              </Link>
+            </div>
+
+            <motion.div
+              variants={staggerContainer}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+              className="space-y-4"
+            >
+              {audienceItems.map((item, idx) => (
+                <motion.div
+                  key={idx}
+                  variants={staggerItem}
+                  className="flex items-center gap-4 p-4 glass-card rounded-xl hover:border-primary/30 transition-all"
+                >
+                  <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <Check className="w-5 h-5 text-primary" />
+                  </div>
+                  <span className="text-foreground font-medium">{item}</span>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+        </div>
+      </AnimatedSection>
+
+      {/* How It Works */}
+      <AnimatedSection className="py-20 md:py-28 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5" />
+        <div className="container relative z-10 px-4">
+          <div className="text-center mb-16">
+            <H2 size="h2Sm" align="center">
+              Our Simple Steps to Creating Professional Illustrations
+            </H2>
+          </div>
+
+          <div className="max-w-4xl mx-auto">
+            {processSteps.map((step, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, x: idx % 2 === 0 ? -50 : 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.5, delay: idx * 0.1 }}
+                className="relative flex gap-6 md:gap-8 pb-12 last:pb-0"
+              >
+                {/* Timeline line */}
+                {idx !== processSteps.length - 1 && (
+                  <div className="absolute left-6 top-14 w-0.5 h-full bg-gradient-to-b from-primary to-primary/20" />
+                )}
+
+                {/* Step number */}
+                <div className="relative z-10 w-12 h-12 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center flex-shrink-0 shadow-lg shadow-primary/30">
+                  <span className="text-white font-bold text-lg">
+                    {step.number}
+                  </span>
+                </div>
+
+                {/* Content */}
+                <div className="flex-1 glass-card rounded-2xl p-6 hover:border-primary/30 transition-all">
+                  <H3 size="h4Sm" className="mb-2">
+                    {step.title}
+                  </H3>
+                  <p className="text-muted-foreground">{step.description}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </AnimatedSection>
+
+      {/* Types of Illustrations */}
+      <AnimatedSection className="py-20 md:py-28 bg-muted/30">
+        <div className="container px-4 text-center">
+          <H2 size="h2Sm" align="center" className="mb-4">
+            Types of Digital Book Illustrations We Create
+          </H2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-12">
+            Our illustration services bring your story to life. We capture every
+            character, scene, and world your readers imagine.
+          </p>
+
+          <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            className="flex flex-wrap justify-center gap-4"
+          >
+            {illustrationTypes.map((type, idx) => (
+              <motion.div
+                key={idx}
+                variants={staggerItem}
+                className="flex items-center gap-3 px-6 py-4 glass-card rounded-full hover:border-primary/30 hover:-translate-y-1 transition-all"
+              >
+                <type.icon className="w-5 h-5 text-primary" />
+                <span className="font-medium">{type.label}</span>
+              </motion.div>
+            ))}
+          </motion.div>
+
+          <div className="mt-12">
+            <Link href="/get-free-quote" className="btn btn-primary btn-lg">
+              Hire a Book Illustrator
+            </Link>
+          </div>
+        </div>
+      </AnimatedSection>
+
+      {/* Before / After */}
+      <AnimatedSection className="py-20 md:py-28 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white">
+        <div className="container px-4">
+          <div className="text-center mb-12">
+            <H2 size="h2Sm" align="center" variant="inverse" className="mb-4">
+              The Pulp House Publishing Turns Your Story into a Piece of Art
+            </H2>
+            <p className="text-white/70 text-lg max-w-2xl mx-auto">
+              We elevate your book from plain text to a visually immersive
+              experience that builds fan engagement and strengthens your brand.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="relative group"
+            >
+              <div className="aspect-[4/3] rounded-2xl bg-slate-700/50 backdrop-blur-sm border border-white/10 overflow-hidden flex items-center justify-center">
+                <div className="text-center p-8">
+                  <BookOpen className="w-16 h-16 text-white/30 mx-auto mb-4" />
+                  <p className="text-white/50">Plain text manuscript</p>
+                </div>
+              </div>
+              <div className="absolute bottom-4 left-4 right-4 py-2 px-4 bg-slate-600/80 backdrop-blur-sm rounded-lg text-center text-sm">
+                Before Immersive Illustration
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="relative group"
+            >
+              <div className="aspect-[4/3] rounded-2xl bg-gradient-to-br from-primary/30 to-secondary/30 backdrop-blur-sm border border-primary/30 overflow-hidden flex items-center justify-center">
+                <div className="text-center p-8">
+                  <Sparkles className="w-16 h-16 text-primary mx-auto mb-4" />
+                  <p className="text-white/80">Stunning visual story</p>
+                </div>
+              </div>
+              <div className="absolute bottom-4 left-4 right-4 py-2 px-4 bg-gradient-to-r from-primary to-secondary rounded-lg text-center text-sm font-medium">
+                After Immersive Illustration
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </AnimatedSection>
+
+      {/* Why Choose Us */}
+      <AnimatedSection className="py-20 md:py-28">
+        <div className="container px-4">
+          <div className="text-center mb-16">
+            <H2 size="h2Sm" align="center">
+              Why Authors Choose Our Illustration Services
+            </H2>
+          </div>
+
+          <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+          >
+            {whyChooseUs.map((item, idx) => (
+              <motion.div
+                key={idx}
+                variants={staggerItem}
+                className="text-center p-6 glass-card rounded-2xl hover:border-primary/30 transition-all hover:-translate-y-1"
+              >
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/20 to-secondary/10 flex items-center justify-center mx-auto mb-5">
+                  <item.icon className="w-8 h-8 text-primary" />
+                </div>
+                <h4 className="text-lg font-bold mb-2">{item.title}</h4>
+                <p className="text-muted-foreground text-sm">
+                  {item.description}
+                </p>
+              </motion.div>
+            ))}
+          </motion.div>
+
+          <div className="text-center mt-12">
+            <a href="tel:888-909-9431" className="btn btn-primary btn-lg">
+              Call Us Today!
+            </a>
+          </div>
+        </div>
+      </AnimatedSection>
+
+      {/* CTA Section 2 */}
+      <AnimatedSection className="py-20 md:py-28 bg-muted/30">
+        <div className="container px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="order-2 lg:order-1">
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-secondary/20 rounded-3xl blur-2xl" />
+                <div className="relative aspect-square max-w-md mx-auto rounded-3xl bg-gradient-to-br from-primary/10 to-secondary/10 border border-primary/20 flex items-center justify-center">
+                  <Palette className="w-32 h-32 text-primary/50" />
+                </div>
+              </div>
+            </div>
+            <div className="order-1 lg:order-2 space-y-6">
+              <H2 size="h2Sm">
+                Illustrations That Deepen Your Story and Hook Your Readers
+              </H2>
+              <p className="text-lg text-muted-foreground">
+                We design visuals that boost engagement, storytelling quality, and
+                overall book appeal. Our artists work to ensure every stroke
+                resonates with your narrative.
+              </p>
+              <Link href="/portfolio" className="btn btn-primary btn-lg">
+                See Our Book Artist Portfolio
+              </Link>
+            </div>
+          </div>
+        </div>
+      </AnimatedSection>
+
+      {/* Comparison Section */}
+      <AnimatedSection className="py-20 md:py-28">
+        <div className="container px-4">
+          <div className="text-center mb-16">
+            <H2 size="h2Sm" align="center">
+              Compare Our Value
+            </H2>
+          </div>
+
+          <div className="space-y-12 max-w-5xl mx-auto">
+            {comparisons.map((comparison, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.5, delay: idx * 0.1 }}
+                className="grid grid-cols-1 md:grid-cols-2 gap-6"
+              >
+                {/* Competitor */}
+                <div className="glass-card rounded-2xl overflow-hidden border-destructive/20">
+                  <div className="bg-slate-800 text-white px-6 py-4 text-center font-bold">
+                    {comparison.competitor}
+                  </div>
+                  <ul className="p-6 space-y-3">
+                    {comparison.competitorPoints.map((point, i) => (
+                      <li key={i} className="flex items-start gap-3">
+                        <X className="w-5 h-5 text-destructive flex-shrink-0 mt-0.5" />
+                        <span className="text-muted-foreground">{point}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Us */}
+                <div className="glass-card rounded-2xl overflow-hidden border-primary/30">
+                  <div className="bg-gradient-to-r from-primary to-secondary text-white px-6 py-4 text-center font-bold">
+                    The Pulp House Publishing
+                  </div>
+                  <ul className="p-6 space-y-3">
+                    {comparison.ourPoints.map((point, i) => (
+                      <li key={i} className="flex items-start gap-3">
+                        <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                        <span className="text-foreground">{point}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </AnimatedSection>
+
+      {/* CTA Section 3 */}
+      <AnimatedSection className="py-20 md:py-28 bg-muted/30">
+        <div className="container px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="space-y-6">
+              <H2 size="h2Sm">
+                Your Illustrations Should Not Be at the Mercy of a Prompt. Invest
+                in 100% Human Book Art.
+              </H2>
+              <p className="text-lg text-muted-foreground">
+                At Pulp House Publishing, we draw every artwork intentionally to
+                honor your story. Avoid generic AI outputs and get custom, soulful
+                art that truly represents your work.
+              </p>
+              <Link href="/get-free-quote" className="btn btn-primary btn-lg">
+                Visualize Your Book Today
+              </Link>
+            </div>
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-secondary/30 to-primary/20 rounded-3xl blur-2xl" />
+              <div className="relative aspect-square max-w-md mx-auto rounded-3xl bg-gradient-to-br from-secondary/10 to-primary/10 border border-secondary/20 flex items-center justify-center">
+                <Pen className="w-32 h-32 text-secondary/50" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </AnimatedSection>
+
+      {/* FAQs */}
+      <AnimatedSection className="py-20 md:py-28">
+        <div className="container px-4">
+          <div className="text-center mb-12">
+            <H2 size="h2Sm" align="center">
+              Frequently Asked Questions
+            </H2>
+          </div>
+
+          <div className="max-w-3xl mx-auto">
+            <Accordion type="single" collapsible defaultValue="item-0">
+              {faqs.map((faq, idx) => (
+                <AccordionItem
+                  key={idx}
+                  value={`item-${idx}`}
+                  className="glass-card rounded-xl mb-4 px-6 border-border/50 hover:border-primary/30 transition-all"
+                >
+                  <AccordionTrigger className="text-left font-semibold">
+                    {faq.question}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground">
+                    {faq.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
+        </div>
+      </AnimatedSection>
+
+      {/* Testimonials */}
+      <section className="py-20 md:py-28 bg-muted/30">
+        <div className="container px-4 text-center">
+          <span className="eye-brow-primary mb-4">
+            Clients Sharing Their Experiences
+          </span>
+          <H2 size="h2Sm" align="center" className="mb-4">
+            Our Book Illustrations Are Shining With 5 Star Reviews
+          </H2>
+          <p className="text-lg text-muted-foreground mb-12 max-w-2xl mx-auto">
+            Our dedication is reflected in the words of our clients. Discover what
+            the fuss is all about.
+          </p>
+          <VideoTestimonialsSection />
+        </div>
+      </section>
+
+      {/* Sticky CTA - Desktop Only */}
+      <motion.div
+        initial={{ y: 100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ delay: 2, duration: 0.5 }}
+        className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 hidden lg:flex items-center gap-4 glass-card rounded-full px-6 py-3 shadow-2xl border-primary/20"
+      >
+        <span className="font-medium">Bring your story to life today!</span>
+        <Link href="/get-free-quote" className="btn btn-primary btn-sm">
+          Get Started
+        </Link>
+      </motion.div>
     </>
   );
 };

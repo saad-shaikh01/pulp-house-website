@@ -174,7 +174,6 @@ export const HeroSection: FC = () => {
                   
                 </motion.div>
 
-                {/* Stats with Floating Glass Cards */}
                 <motion.div
                   ref={statsRef}
                   initial={{ opacity: 0, y: 30 }}
