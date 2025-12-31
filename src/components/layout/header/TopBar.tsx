@@ -7,6 +7,7 @@ import { Phone, Mail } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { SITE_CONFIG } from "@/lib/data";
 import { ModeToggle } from "@/components/global/mode-toggle";
+import { ButtonV2 } from "@/components/ui/button-v2";
 
 interface TopBarProps {
   className?: string;
@@ -61,12 +62,9 @@ export const TopBar: FC<TopBarProps> = ({ className }) => {
           {/* CTA Buttons - Right Side */}
           <div className="lg:col-span-3 flex items-center justify-start lg:justify-end gap-3">
             <ModeToggle />
-            <Link
-              href="/get-free-quote"
-              className="inline-flex items-center px-5 py-2 bg-white text-primary hover:bg-white/90 border-2 border-secondary rounded-full text-sm font-semibold transition-all duration-200"
-            >
+            <ButtonV2 href="/get-free-quote" variant="white" size="sm">
               Submission
-            </Link>
+            </ButtonV2>
             {/* Optional: Start Live Chat Button - Hidden by default */}
             {/* <button
               className="hidden xl:inline-flex items-center px-5 py-2 bg-transparent hover:bg-white/10 border-2 border-white rounded-full text-sm font-semibold transition-all duration-200"

@@ -171,7 +171,7 @@ export const ContactForm: FC = () => {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="w-full h-12 bg-primary text-primary-foreground font-semibold rounded-md hover:bg-primary/90 transition-colors flex items-center justify-center disabled:opacity-70"
+        className="btn btn-primary w-full"
       >
         {isSubmitting ? (
           <>

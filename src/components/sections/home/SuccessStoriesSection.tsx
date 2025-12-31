@@ -143,7 +143,7 @@ export const SuccessStoriesSection: FC = () => {
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 onClick={prev}
-                className="w-12 h-12 bg-primary hover:bg-primary/90 text-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all"
+                className="btn btn-primary btn-circle"
                 aria-label="Previous testimonial"
               >
                 <ChevronLeft className="w-6 h-6" />
@@ -153,7 +153,7 @@ export const SuccessStoriesSection: FC = () => {
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 onClick={next}
-                className="w-12 h-12 bg-primary hover:bg-primary/90 text-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all"
+                className="btn btn-primary btn-circle"
                 aria-label="Next testimonial"
               >
                 <ChevronRight className="w-6 h-6" />

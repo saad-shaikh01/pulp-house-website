@@ -66,10 +66,8 @@ export const PublishingJourneySection: FC = () => {
         >
           <ButtonV2
             href="/get-free-quote"
-            variant="cta"
+            variant="primary"
             size="lg"
-            rounded="full"
-            animation="scaleLift"
           >
             Request a Quote
           </ButtonV2>
@@ -77,8 +75,6 @@ export const PublishingJourneySection: FC = () => {
             phone={SITE_CONFIG.phone}
             variant="outline"
             size="lg"
-            rounded="full"
-            animation="scaleLift"
             className=""
           />
         </motion.div>

@@ -155,33 +155,23 @@ export const HeroSection: FC = () => {
                   transition={{ duration: 0.6, delay: 0.4 }}
                   className="flex flex-col items-center justify-center gap-4 pt-4 sm:flex-row"
                 >
-                  <motion.div
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
+                  
                     <ButtonV2
                       href="/get-free-quote"
-                      variant="cta"
+                      variant="primary"
                       size="lg"
-                      rounded="full"
-                      animation="scaleLift"
                       className="shadow-primary/50 shadow-2xl"
                     >
                       Book Free Consultation
                     </ButtonV2>
-                  </motion.div>
-                  <motion.div
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
+                  
                     <PhoneButtonV2
                       phone={SITE_CONFIG.phone}
-                      variant="glass"
+                      variant="outline-primary"
                       size="lg"
-                      rounded="full"
                       className="shadow-xl"
                     />
-                  </motion.div>
+                  
                 </motion.div>
 
                 {/* Stats with Floating Glass Cards */}
