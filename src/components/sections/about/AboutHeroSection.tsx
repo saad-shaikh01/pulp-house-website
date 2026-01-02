@@ -90,8 +90,8 @@ export const AboutHeroSection: FC = () => {
                 href="/contact-us"
                 variant="outline"
                 size="lg"
-                rounded="2xl"
-                animation="scaleLift"
+                // rounded="2xl"
+                // animation="scaleLift"
                 className="border-2"
               >
                 Contact Us

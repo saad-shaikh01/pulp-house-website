@@ -84,10 +84,8 @@ export const ServiceCardsSection: FC = () => {
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
                 <ButtonV2
                   href="/get-free-quote"
-                  variant="default"
+                  variant="primary"
                   size="lg"
-                  rounded="full"
-                  animation="scaleLift"
                   iconRight={ArrowRight}
                   className="bg-white text-primary hover:bg-white/90 shadow-2xl"
                 >
@@ -95,10 +93,7 @@ export const ServiceCardsSection: FC = () => {
                 </ButtonV2>
                 <PhoneButtonV2
                   phone={SITE_CONFIG.phone}
-                  variant="glass"
                   size="lg"
-                  rounded="full"
-                  animation="scaleLift"
                 />
               </div>
             </div>

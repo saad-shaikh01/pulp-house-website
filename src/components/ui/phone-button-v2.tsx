@@ -17,22 +17,33 @@ import { ButtonV2, type ButtonV2Props } from "./button-v2";
  * ```
  */
 
-export interface PhoneButtonV2Props extends Omit<ButtonV2Props, "href" | "iconLeft"> {
+export interface PhoneButtonV2Props extends Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, "href"> {
   /** Phone number (will be formatted as tel: link) */
   phone: string;
   /** Show phone icon (default: true) */
   showIcon?: boolean;
+  /** Button variant */
+  variant?: ButtonV2Props["variant"];
+  /** Button size */
+  size?: ButtonV2Props["size"];
+  /** Enable motion animations */
+  motion?: boolean;
+  /** Loading state */
+  loading?: boolean;
 }
 
 export const PhoneButtonV2 = React.forwardRef<HTMLAnchorElement, PhoneButtonV2Props>(
-  ({ phone, showIcon = true, children, variant = "phone", ...props }, ref) => {
+  ({ phone, showIcon = true, children, variant = "primary", size, motion, loading, ...props }, ref) => {
     return (
       <ButtonV2
         ref={ref as any}
         href={`tel:${phone}`}
         variant={variant}
+        size={size}
+        motion={motion}
+        loading={loading}
         iconLeft={showIcon ? Phone : undefined}
-        {...props}
+        {...(props as any)}
       >
         {children || phone}
       </ButtonV2>

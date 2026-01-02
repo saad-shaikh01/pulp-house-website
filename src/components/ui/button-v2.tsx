@@ -45,16 +45,14 @@ export type ButtonVariant =
 
 export type ButtonSize = "default" | "sm" | "lg" | "xl";
 
-export interface ButtonV2Props
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+// Base props shared by all button variants
+interface BaseButtonV2Props {
   /** Button variant (maps to .btn-* classes in globals.css) */
   variant?: ButtonVariant;
   /** Button size (maps to .btn-sm, .btn-lg, .btn-xl classes) */
   size?: ButtonSize;
   /** Use Slot component for composition */
   asChild?: boolean;
-  /** Make button a link (uses Next.js Link) */
-  href?: string;
   /** Icon to display on the left */
   iconLeft?: React.ReactNode | LucideIcon;
   /** Icon to display on the right */
@@ -63,9 +61,29 @@ export interface ButtonV2Props
   motion?: boolean;
   /** Show loading state */
   loading?: boolean;
+  /** Additional className */
+  className?: string;
+  /** Children */
+  children?: React.ReactNode;
 }
 
-const ButtonV2 = React.forwardRef<HTMLButtonElement, ButtonV2Props>(
+// Props for button element
+interface ButtonElementProps extends BaseButtonV2Props, Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, keyof BaseButtonV2Props> {
+  href?: never;
+}
+
+// Props for link element
+interface LinkElementProps extends BaseButtonV2Props, Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, keyof BaseButtonV2Props | 'href'> {
+  /** Make button a link (uses Next.js Link) */
+  href: string;
+}
+
+export type ButtonV2Props = ButtonElementProps | LinkElementProps;
+
+const ButtonV2 = React.forwardRef<
+  HTMLButtonElement | HTMLAnchorElement,
+  ButtonV2Props
+>(
   (
     {
       className,
@@ -90,15 +108,6 @@ const ButtonV2 = React.forwardRef<HTMLButtonElement, ButtonV2Props>(
       size !== "default" && `btn-${size}`, // Size class (.btn-sm, .btn-lg, .btn-xl)
       className
     );
-
-    // Determine component type
-    const Comp = asChild
-      ? Slot
-      : href
-        ? Link
-        : enableMotion
-          ? motion.button
-          : "button";
 
     // Render icon helper
     const renderIcon = (
@@ -128,29 +137,55 @@ const ButtonV2 = React.forwardRef<HTMLButtonElement, ButtonV2Props>(
       </>
     );
 
-    const baseProps = {
-      className: btnClasses,
-      ...(href && !asChild ? { href } : {}),
-      ...props,
-    };
+    // For motion.button, exclude props that conflict with Framer Motion
+    // (drag and animation handlers have different signatures in FM vs React)
+    const {
+      onDrag,
+      onDragEnd,
+      onDragStart,
+      onDragEnter,
+      onDragLeave,
+      onDragOver,
+      onAnimationStart,
+      onAnimationEnd,
+      onAnimationIteration,
+      ...restProps
+    } = props as any;
 
-    // Motion-specific props
+    // Motion-specific rendering
     if (enableMotion && !asChild && !href) {
       return (
         <motion.button
           ref={ref as any}
+          className={btnClasses}
           whileHover={{ scale: 1.02, y: -2 }}
           whileTap={{ scale: 0.98, y: 0 }}
           transition={{ duration: 0.2 }}
-          {...baseProps}
+          {...restProps}
         >
           {content}
         </motion.button>
       );
     }
 
+    // Link rendering
+    if (href && !asChild) {
+      return (
+        <Link
+          ref={ref as any}
+          href={href}
+          className={btnClasses}
+          {...(props as any)}
+        >
+          {content}
+        </Link>
+      );
+    }
+
+    // Regular button or Slot rendering
+    const Comp = asChild ? Slot : "button";
     return (
-      <Comp ref={ref as any} {...baseProps}>
+      <Comp ref={ref as any} className={btnClasses} {...(props as any)}>
         {content}
       </Comp>
     );
