@@ -12,9 +12,6 @@ import { Check, Phone, Circle } from "lucide-react";
 const BookLayoutDesignPage: FC = () => {
   return (
     <>
-      <Header />
-      <main className="min-h-screen bg-background relative z-40">
-
         {/* Hero Section */}
         <section className="py-20 md:py-28 bg-gradient-to-b from-primary/10 to-background">
              <div className="container px-4">
@@ -267,8 +264,6 @@ const BookLayoutDesignPage: FC = () => {
             </div>
         </section>
 
-      </main>
-      <Footer />
     </>
   );
 };

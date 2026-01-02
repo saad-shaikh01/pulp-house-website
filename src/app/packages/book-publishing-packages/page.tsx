@@ -685,8 +685,6 @@ const PackagesPage: FC = () => {
 
   return (
     <>
-      <Header />
-      <main className="min-h-screen bg-background relative z-40">
         <div>
           <HeroSection />
         </div>
@@ -745,9 +743,6 @@ const PackagesPage: FC = () => {
 
         {/* Testimonials */}
         <VideoTestimonialsSection />
-
-      </main>
-      <Footer />
     </>
   );
 };

@@ -105,8 +105,6 @@ const TESTIMONIALS: Testimonial[] = [
 const ReviewsPage: FC = () => {
   return (
     <>
-      <Header />
-      <main className="min-h-screen bg-background relative z-40">
 
         {/* Header Section */}
         <section className="py-20 bg-muted/10 text-center px-4">
@@ -175,9 +173,6 @@ const ReviewsPage: FC = () => {
                 "https://video.thepulphousepublishing.com/Marketing/3.webm",
             ]}
         />
-
-      </main>
-      <Footer />
     </>
   );
 };
