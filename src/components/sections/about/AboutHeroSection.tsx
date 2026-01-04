@@ -111,7 +111,7 @@ export const AboutHeroSection: FC = () => {
               <div className="relative rounded-3xl overflow-hidden shadow-2xl">
                 <div className="aspect-[4/3] relative">
                   <Image
-                    src="/images/about-us/about-hero.webp"
+                    src="/images/about-hero.webp"
                     alt="Reading on tablet"
                     fill
                     className="object-cover"
@@ -158,7 +158,7 @@ export const AboutHeroSection: FC = () => {
                   {/* Client avatars */}
                   <div className="relative h-10">
                     <Image
-                      src="/images/about-us/about-client.webp"
+                      src="/images/about-client.webp"
                       alt="Our clients"
                       fill
                       className="object-contain object-left"

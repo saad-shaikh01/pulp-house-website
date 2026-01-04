@@ -109,7 +109,7 @@ export const AboutWhoWeAreSection: FC = () => {
               {/* Main image container */}
               <div className="relative aspect-[6/4] rounded-3xl overflow-hidden shadow-2xl">
                 <Image
-                  src="/images/about-us/who-we-are.webp"
+                  src="/images/who-we-are.webp"
                   alt="Person reading a book"
                   fill
                   className="object-cover"

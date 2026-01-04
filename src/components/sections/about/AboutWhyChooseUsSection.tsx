@@ -7,25 +7,25 @@ import { Sparkles } from "lucide-react";
 
 const cards = [
   {
-    image: "/images/about-us/choose-1.webp",
+    image: "/images/choose-1.webp",
     title: "Genre-Specific Expertise",
     description: "We know every genre has its quirks. We provide tailored guidance and strategies for every genre so you can find your perfect audience.",
     variant: "dark" as const,
   },
   {
-    image: "/images/about-us/choose-2.webp",
+    image: "/images/choose-2.webp",
     title: "Custom Services for You",
     description: "Your book is unique. So, we make sure that our services are built around your story, your vision, and YOU.",
     variant: "light" as const,
   },
   {
-    image: "/images/about-us/choose-3.webp",
+    image: "/images/choose-3.webp",
     title: "Author Inclusion in Every Step",
     description: "We are the only self-publishing firm that gives you the driver's seat. We guide, support, and make your ideas come to life.",
     variant: "dark" as const,
   },
   {
-    image: "/images/about-us/choose-4.webp",
+    image: "/images/choose-4.webp",
     title: "Fairest Price in the Market",
     description: "There are no hidden fees and no surprises. Just professional publishing that's fair, transparent, and totally worth it!",
     variant: "light" as const,

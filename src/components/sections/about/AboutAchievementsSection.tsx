@@ -138,7 +138,7 @@ export const AboutAchievementsSection: FC = () => {
               {/* Main image */}
               <div className="relative aspect-square rounded-3xl overflow-hidden shadow-2xl">
                 <Image
-                  src="/images/about-us/achievement.webp"
+                  src="/images/achievement.webp"
                   alt="Achievements visual with target and cubes"
                   fill
                   className="object-cover"

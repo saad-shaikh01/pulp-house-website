@@ -61,7 +61,7 @@ export const AboutJourneySection: FC = () => {
 
                 <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl">
                   <Image
-                    src="/images/about-us/our-journey.webp"
+                    src="/images/our-journey.webp"
                     alt="Our Journey Handshake"
                     fill
                     className="object-cover"
